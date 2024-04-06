@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomeContact = () => {
   return (
@@ -27,12 +28,17 @@ const HomeContact = () => {
                   </p>
 
                   <div className="inline-flex  flex-col sm:flex-row space-x-0 space-y-2 sm:space-y-0 sm:space-x-3">
-                    <button className="inline-block  hover:text-white bg-[#C5B351] uppercase  hover:bg-black  px-4 py-2 lg:px-12 lg:py-3.5">
-                      Buyer's Guide
-                    </button>
-                    <button className=" hover:text-white  border hover:bg-[#C5B351]  border-[#C5B351] uppercase  px-4 py-2  lg:px-12 lg:py-3.5">
-                      Mortgage Calculator
-                    </button>
+                    <Link to="/buyer-guide">
+                      <button className="inline-block  hover:text-white bg-[#C5B351] uppercase  hover:bg-black  px-4 py-2 lg:px-12 lg:py-3.5">
+                        Buyer's Guide
+                      </button>
+                    </Link>
+
+                    <a href="/mortgage/calculator.html">
+                      <button className=" hover:text-white  border hover:bg-[#C5B351]  border-[#C5B351] uppercase  px-4 py-2  lg:px-12 lg:py-3.5">
+                        Mortgage Calculator
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -64,9 +70,11 @@ const HomeContact = () => {
                     learn your property’s market value.
                   </p>
                   <div className="inline-flex flex-col sm:flex-row space-x-0 space-y-2 sm:space-y-0 sm:space-x-3">
-                    <button className="inline-block  hover:text-white border hover:bg-[#C5B351]  border-[#C5B351] uppercase px-4 py-2 lg:px-12 lg:py-3.5">
-                      Seller's Guide
-                    </button>
+                    <Link to="/seller-guide">
+                      <button className="inline-block  hover:text-white border hover:bg-[#C5B351]  border-[#C5B351] uppercase px-4 py-2 lg:px-12 lg:py-3.5">
+                        Seller's Guide
+                      </button>
+                    </Link>
                     {/* <button className=' hover:text-white  bg-[#C5B351] hover:bg-black  uppercase px-4 py-2 lg:px-12 lg:py-3.5 '>Home Evalution</button> */}
                   </div>
                 </div>
