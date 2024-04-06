@@ -1,0 +1,43 @@
+.react-multiple-carousel__arrow::before {
+    color: black !important;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: -3px !important;
+}
+
+.react-multiple-carousel__arrow--right {
+    right: -3px !important;
+}
+
+
+.react-multiple-carousel__arrow {
+    background-color: #fff !important;
+    color: black;
+    padding: 5px !important;
+
+}
+
+
+.parent-div .content {
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    opacity: 0;
+   
+}
+
+.parent-div:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+
+#carouselId .react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
+    display: none !important;
+}
+
+#carouselId .react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+    display: none !important ;
+}
