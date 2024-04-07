@@ -9,12 +9,12 @@ import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
 import { IoIosArrowDown } from "react-icons/io";
 const FeaturedPage = () => {
-  const [Searchtogglemenu, setSearchtogglemenu] = useState(false)
+  const [Searchtogglemenu, setSearchtogglemenu] = useState(false);
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [propertiesPerPage] = useState(9);
 
-  const { showMessageBox, handleClose } = useMyContext()
+  const { showMessageBox, handleClose } = useMyContext();
   useEffect(() => {
     fetch("https://backend.artechworld.tech/api/admin/property/list/all")
       .then((response) => response.json())
@@ -41,11 +41,9 @@ const FeaturedPage = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-
   const TogglSearch = () => {
-    setSearchtogglemenu(!Searchtogglemenu)
-  }
-
+    setSearchtogglemenu(!Searchtogglemenu);
+  };
 
   return (
     <>
@@ -54,7 +52,6 @@ const FeaturedPage = () => {
         className="bg-black flex justify-center items-center text-white  w-full bg-cover bg-no-repeat h-auto py-16"
         style={{ backgroundImage: `url("/asset/bg-lines-svg.svg")` }}
       >
-
         <div className=" w-full px-4 lg:px-10">
           <form className=" mx-auto w-full px-4 lg:w-1/2">
             <div className="relative">
@@ -91,7 +88,7 @@ const FeaturedPage = () => {
             </div>
           </form>
 
-          {
+          {/* {
             Searchtogglemenu && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
 
@@ -172,24 +169,18 @@ const FeaturedPage = () => {
 
               </div>
             )
-          }
+          } */}
 
-
-
-
-
-          <div className="mt-8 text-center mx-auto">
+          {/* <div className="mt-8 text-center mx-auto">
             <span
               onClick={TogglSearch}
-              className="text-lg font-normal cursor-pointer inline-flex   ">  Advance Search <IoIosArrowDown className="w-5 h-5 ml-2" />
+              className="text-lg font-normal cursor-pointer inline-flex   "
+            >
+              {" "}
+              Advance Search <IoIosArrowDown className="w-5 h-5 ml-2" />
             </span>
-          </div>
+          </div> */}
         </div>
-
-
-
-
-
       </div>
 
       <div className="container px-4 lg:px-10 py-6 mx-auto">
@@ -262,7 +253,6 @@ const FeaturedPage = () => {
                     </tbody>
                   </table> */}
 
-
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left rtl:text-right">
                       <thead className="text-xs text-gray-700 uppercase">
@@ -305,7 +295,6 @@ const FeaturedPage = () => {
                       </tbody>
                     </table>
                   </div>
-
                 </div>
               </div>
               <p className="text-sm pl-1">
@@ -349,14 +338,15 @@ const FeaturedPage = () => {
               (pageNumber) =>
                 pageNumber > 0 &&
                 pageNumber <=
-                Math.ceil(properties.length / propertiesPerPage) && (
+                  Math.ceil(properties.length / propertiesPerPage) && (
                   <button
                     key={pageNumber}
                     onClick={() => paginate(pageNumber)}
-                    className={`px-4 py-2 ${currentPage === pageNumber
-                      ? "bg-NewYello text-white"
-                      : "bg-gray-200 hover:text-white hover:bg-black"
-                      } `}
+                    className={`px-4 py-2 ${
+                      currentPage === pageNumber
+                        ? "bg-NewYello text-white"
+                        : "bg-gray-200 hover:text-white hover:bg-black"
+                    } `}
                   >
                     {pageNumber}
                   </button>

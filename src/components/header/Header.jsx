@@ -81,7 +81,6 @@ export default function Navbar() {
               <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
             </a>
             <ul className=" font-medium">
-             
               <li>
                 <Link
                   to="/"
@@ -124,7 +123,9 @@ export default function Navbar() {
                   to="/testimonial"
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
-                  <span className="flex-1 ms-3 whitespace-nowrap">Testimonial</span>
+                  <span className="flex-1 ms-3 whitespace-nowrap">
+                    Testimonial
+                  </span>
                 </Link>
               </li>
               <li>
@@ -132,7 +133,9 @@ export default function Navbar() {
                   to="/feature"
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
-                  <span className="flex-1 ms-3 whitespace-nowrap">Properties</span>
+                  <span className="flex-1 ms-3 whitespace-nowrap">
+                    Properties
+                  </span>
                 </Link>
               </li>
               <li>
@@ -148,7 +151,9 @@ export default function Navbar() {
                   to="/register"
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
-                  <span className="flex-1 ms-3 whitespace-nowrap">Register</span>
+                  <span className="flex-1 ms-3 whitespace-nowrap">
+                    Register
+                  </span>
                 </Link>
               </li>
             </ul>

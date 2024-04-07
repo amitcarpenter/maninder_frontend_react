@@ -31,7 +31,7 @@ const Footer = () => {
                     </a>
                     <span>+1 (604) 715-2996</span>
                   </p>
-                  <p className="flex items-center gap-3">
+                  <p className="flex items-center gap-3 py-1">
                     <a href="mailto:maninder.realtor@gmail.com">
                       <FaEnvelope className="h-5 w-5 text-[#C5B351]" />
                     </a>
@@ -41,14 +41,14 @@ const Footer = () => {
                     href="https://www.facebook.com/profile.php?id=100082839065240"
                     target="_blank"
                   >
-                    <p className="flex items-center gap-2">
+                    {/* <p className="flex items-center gap-2">
                       {" "}
                       <span className=" text-NewYello  ">
                         {" "}
                         <FaFacebookF className=" w-6 h-6 " />{" "}
                       </span>{" "}
                       https://www.facebook.com/p/Maninder-Singh-Realtor-100082839065240/
-                    </p>
+                    </p> */}
                   </a>
                 </li>
               </nav>
@@ -73,7 +73,7 @@ const Footer = () => {
                     </span>{" "}
                     +1 (604) 262-1212
                   </p>
-                  <p className="flex items-center   gap-2 my-1">
+                  <p className="flex items-center   gap-2 my-1 py-1">
                     {" "}
                     <span className=" text-NewYello  ">
                       <MdOutlineEmail className=" w-6 h-6 " />
@@ -81,7 +81,7 @@ const Footer = () => {
                     info@rexararealty.com{" "}
                   </p>
                   <Link to="https://www.facebook.com/RexaraRealtyInc/">
-                    <p className="flex  break-all  items-center gap-2 p-2">
+                    {/* <p className="flex  break-all  items-center gap-2 p-2">
                       {" "}
                       <span className=" text-NewYello  ">
                         {" "}
@@ -89,7 +89,7 @@ const Footer = () => {
                       </span>{" "}
                       https://www.facebook.com/RexaraRealtyInc/
 
-                    </p>
+                    </p> */}
                   </Link>
                 </li>
               </nav>
@@ -133,6 +133,9 @@ const Footer = () => {
                     <li>
                       <a href="/testimonial">Testimonial</a>
                     </li>
+                    <li>
+                      <a href="/MortgageCalculator">Mortgage Calculator</a>
+                    </li>
                   </nav>
                 </div>
                 <div>
@@ -164,8 +167,8 @@ const Footer = () => {
 
                 <div className="">
                   <p>Maninder Singh</p>
-                  <p>3033 immel st #360 abbotsford</p>
-                  <p>Abbotsford, BC, V2S 6S2</p>
+                  <p>#287-8128 128 Street Surrey</p>
+                  <p>BC V3W 1R1</p>
                   <p>Canada</p>
                   <p>Email: maninder.realtor@gmail.com </p>
                   <p>Phone: +1 (604) 715-2996</p>

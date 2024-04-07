@@ -23,8 +23,8 @@ const Homeinfo = () => {
               </div>
 
               <p className="text-xl font-normal mt-2">Downtown | Abbotsford</p>
-              <p className="m">3033 immel st #360 abbotsford</p>
-              <p className="m">Abbotsford, BC, V2S 6S2</p>
+              <p className="m">#287-8128 128 Street Surrey</p>
+              <p className="m">BC V3W 1R1</p>
               <div className="py-3">
                 {/* <p className="flex items-center gap-3">
                   {" "}

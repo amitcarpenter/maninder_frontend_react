@@ -100,7 +100,7 @@ const Contactpage = () => {
                   </p>
                   <p className="mb-1">
                     <strong>Address:</strong>{" "}
-                    <span className="pl-3">Abbotsford, BC, V2S 6S2</span>{" "}
+                    <span className="pl-3">#287-8128 128 Street Surrey, BC V3W 1R1</span>{" "}
                   </p>
                 </div>
 

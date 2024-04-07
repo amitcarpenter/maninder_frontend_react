@@ -34,11 +34,11 @@ const HomeContact = () => {
                       </button>
                     </Link>
 
-                    <a href="/mortgage/calculator.html">
+                    <Link to="MortgageCalculator">
                       <button className=" hover:text-white  border hover:bg-[#C5B351]  border-[#C5B351] uppercase  px-4 py-2  lg:px-12 lg:py-3.5">
                         Mortgage Calculator
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
