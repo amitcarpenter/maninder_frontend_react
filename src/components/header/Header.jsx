@@ -66,7 +66,7 @@ export default function Navbar() {
             isSideMenuOpen && "translate-x-0"
           )}
         >
-          <div className="h-full py-4 overflow-y-auto bg-black text-white ">
+          <div className="h-full py-4 overflow-y-auto bg-[#152B47] text-white ">
             <div className="flex justify-end ">
               <span>
                 <RxCross2
@@ -81,14 +81,7 @@ export default function Navbar() {
               <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
             </a>
             <ul className=" font-medium">
-              <li>
-                <a
-                  href="#"
-                  className="flex border-b items-center py-3   hover:bg-gray-100 dark:hover:bg-NewYello  group"
-                >
-                  <span className="ms-3">Dashboard</span>
-                </a>
-              </li>
+             
               <li>
                 <Link
                   to="/"
@@ -123,6 +116,39 @@ export default function Navbar() {
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">Blog</span>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/testimonial"
+                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
+                >
+                  <span className="flex-1 ms-3 whitespace-nowrap">Testimonial</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/feature"
+                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
+                >
+                  <span className="flex-1 ms-3 whitespace-nowrap">Properties</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/login"
+                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
+                >
+                  <span className="flex-1 ms-3 whitespace-nowrap">Login</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
+                >
+                  <span className="flex-1 ms-3 whitespace-nowrap">Register</span>
                 </Link>
               </li>
             </ul>
