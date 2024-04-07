@@ -111,7 +111,7 @@ const CardList = () => {
       <div className="container px-4 lg:px-10 mx-auto items-center ">
         <div className="mb-6">
           <h2 className="text-3xl lg:text-5xl font-[400]  text-center text-[#C5B351]    capitalize mb-3">
-            FEATURED LISTINGS
+            Featured Listing
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-10 mx-auto">
@@ -124,7 +124,7 @@ const CardList = () => {
               >
                 <div className="shadow bg-white mb-4">
                   <img
-                    className="w-full"
+                    className="w-full h-[15rem]"
                     src={property["mrp-listing-main-image src"]}
                     alt=""
                   />
@@ -141,7 +141,7 @@ const CardList = () => {
                       </p>
                     </div>
                     <div>
-                      <div className="flex justify-center items-center gap-3">
+                      <div className="flex flex-wrap justify-center items-center gap-3">
                         <span className="flex items-center gap-2">
                           <IoBedOutline className="w-5 h-5" />{" "}
                           {property["Bedrooms:"]}

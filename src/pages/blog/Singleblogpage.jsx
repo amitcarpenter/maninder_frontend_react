@@ -13,14 +13,18 @@ import Footer from '../../components/footer/Footer';
 import { useParams } from 'react-router-dom';
 import MessageBox from '../../components/MessageBox';
 import { useMyContext } from '../../store/ContextApi';
+
+import { Parser } from "html-to-react";
+
 const Singleblogpage = () => {
+
     const { showMessageBox, handleClose } = useMyContext()
     const data = [1, 2, 3, 4, 5]
     const [blogs, setBlogs] = useState([]);
     const [Singleblogs, setSingleblogs] = useState({});
 
     const [formattedDate, setFormattedDate] = useState("");
-
+    const parser = new Parser();
     const { id } = useParams()
 
     const fetchBlogs = async () => {
@@ -45,7 +49,6 @@ const Singleblogpage = () => {
 
 
 
-
     useEffect(() => {
         fetchSingleBlogs();
     }, [id]);
@@ -53,7 +56,10 @@ const Singleblogpage = () => {
 
     const formatDate = (date) => {
         const options = { month: 'long', day: 'numeric', year: 'numeric' };
+
         return date.toLocaleDateString('en-US', options);
+
+
     };
 
     const fetchSingleBlogs = async () => {
@@ -62,6 +68,7 @@ const Singleblogpage = () => {
             const data = await response.json();
             if (data.status) {
                 const parsedBlogs = data.data
+                console.log(parsedBlogs, "___sigg")
 
 
                 setSingleblogs(parsedBlogs);
@@ -69,11 +76,9 @@ const Singleblogpage = () => {
 
                 const date = new Date(data.data.created_at);
 
-
                 const formattedDate = formatDate(date);
 
                 setFormattedDate(formattedDate);
-
 
             } else {
                 console.error('Failed to fetch blogs');
@@ -112,7 +117,13 @@ const Singleblogpage = () => {
 
 
                                 <div className='my-5'>
-                                    <p>New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 km2) are land and 10.81 square miles (28.0 km2) are water.</p>
+                                    {/* <p>New York County as a whole covers a total area of 33.77 square miles (87.5 
+                                        km2), of which 22.96 square miles (59.5 km2) are
+                                         land and 10.81 square miles (28.0 km2) are water.</p> */}
+                                    <p>{parser.parse(Singleblogs.content)}</p>
+
+
+
                                 </div>
                                 <div class="py-2 border-l border-NewYello">
                                     <p className='italic pl-4'>A modern redrawing of the 1807 version of the Commissioner’s Grid plan for Manhattan, a few years before it was adopted in 1811. Central Park is absent.</p>
@@ -123,23 +134,6 @@ const Singleblogpage = () => {
 
                                 </div>
 
-                                <div>
-                                    <h1 className=' text-black text-2xl lg:text-3xl font-[400] mb-4'>What you must know about the Seatlle market</h1>
-
-                                    <p className='mb-4'>Curabitur massa magna, tempor in blandit id, porta in ligula. Aliquam laoreet nisl massa, at interdum mauris sollicitudin et. Mauris risus lectus, tristique at nisl at, pharetra tristique enim.</p>
-                                    <p className='mb-4'>Nullam this is a link nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Nulla elit mauris, volutpat eu varius malesuada, pulvinar eu ligula. Ut et adipiscing erat. Curabitur adipiscing erat vel libero tempus congue. Nam pharetra interdum vestibulum. Aenean gravida mi non aliquet porttitor.
-                                        Praesent dapibus, nisi a faucibus tincidunt, quam dolor condimentum metus, in convallis libero ligula ut eros.</p>
-
-                                    <li className='list-disc'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                    <li className='list-disc'>Aliquam tincidunt mauris eu risus.</li>
-
-                                    <div className='pl-5'>
-                                        <li className="list-decimal">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                        <li className="list-decimal">Vestibulum auctor dapibus neque.</li>
-                                    </div>
-
-
-                                </div>
 
 
                                 <div className='flex gap-3  items-center mt-5'>

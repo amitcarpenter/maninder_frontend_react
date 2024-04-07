@@ -120,12 +120,12 @@ const FeaturesDetails = () => {
             {propertyImages.map((imageUrl, index) => (
               <div
                 key={index}
-                className="bg-cover bg-no-repeat shadow overflow-hidden relative"
+                className="bg-cover py-40 md:py-48  bg-no-repeat shadow overflow-hidden relative"
                 style={{
                   backgroundImage: `url("${imageUrl}")`,
                 }}
               >
-                <div className="py-40 md:py-48"></div>
+                <div className=""></div>
               </div>
             ))}
           </Carousel>

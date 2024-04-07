@@ -14,6 +14,7 @@ import FeaturesDetails from "./pages/Featured/FeaturesDetails";
 import BuyersGuide from "./pages/sell/BuyersGuide";
 import SellerGuide from "./pages/sell/SellerGuide";
 import Register from "./components/login/Register";
+import MortgageCalculator from "./pages/MortgageCalculator/MortgageCalculator";
 
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
         <Route path="/buyer-guide" element={<BuyersGuide />} />
         <Route path="/seller-guide" element={<SellerGuide />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/mortgage-calculator" element={<Register />} />
+        {/* <Route path="/mortgage-calculator" element={<Register />} /> */}
+        <Route path="/MortgageCalculator" element={<MortgageCalculator/>} />
 
 
       </Routes>

@@ -19,7 +19,7 @@ const SearchForm = () => {
         <div className="mb-3">
           <select
             id="countries"
-            class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5   "
+            class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 "
           >
             <option selected>Property category</option>
             <option value="US">United States</option>

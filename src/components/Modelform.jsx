@@ -4,11 +4,11 @@ const Modelform = () => {
   return (
     <>
       <div className="">
-        <form class=" w-full bg-white shadow-lg text-[#464646] px-8">
+        <form class=" w-full bg-white shadow-lg text-[#464646] px-8 pb-5">
           <div className="flex gap-4 mb-4">
             <div>
               <img
-                className="w-28 mt-[-26px]"
+                className="w-20 mt-[-26px]"
                 src="https://crm.artechworld.tech/images/faces/facemaninder.png"
                 alt=""
               />
