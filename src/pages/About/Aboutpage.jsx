@@ -117,12 +117,13 @@ const Aboutpage = () => {
             </div>
 
             <div
-              className="w-full lg:w-[40%] h-[21rem] md:h-[52rem] lg:h-auto bg-center rounded-xl  bg-no-repeat bg-cover"
-              style={{ backgroundImage: `url("././asset/About_img_ori.jpg")` }}
+              className="w-full lg:w-[40%] h-[21rem] md:h-[52rem] lg:h-auto  rounded-xl  bg-no-repeat bg-cover"
+              style={{ backgroundImage: `url("././asset/20230908_093148_aout.jpg")` }}
             ></div>
           </div>
         </div>
       </div>
+      
 
       <div
         className=" my-5 py-4 md:py-16 w-full bg-cover bg-no-repeat"

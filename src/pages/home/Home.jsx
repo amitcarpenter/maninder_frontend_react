@@ -3,7 +3,6 @@ import "./home.css";
 import Header from "../../components/header/Header";
 import Homebanner from "../../components/banner/Homebanner";
 import Footer from "../../components/footer/Footer";
-import Testimonial from "../../components/testimonial/Testimonial";
 import HomeContact from "./HomeContact";
 import About from "./About";
 import CardList from "./CardList";
@@ -12,8 +11,11 @@ import Homeslider from "./Homeslider";
 import DemoCarousel from "./DemoCarousel";
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
+
 const Home = () => {
+
   const { showMessageBox, handleClose } = useMyContext();
+
 
   return (
     <>
@@ -21,7 +23,9 @@ const Home = () => {
       <Homebanner />
       <Homeslider />
       <div className=" mt-0 sm:mt-12 py-6">
+        
         <About />
+
       </div>
 
       <section className="container mx-auto py-6 lg:pt-20 lg:pb:14 px-4 lg:px-10">
