@@ -1,7 +1,9 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+
+
 const Login = () => {
 
     const [Email, setEmail] = useState("")
@@ -14,7 +16,6 @@ const Login = () => {
         const payload = {
 
             email: Email,
-
             password: Password
         };
 
@@ -73,5 +74,6 @@ const Login = () => {
         </div>
     );
 };
+
 
 export default Login;

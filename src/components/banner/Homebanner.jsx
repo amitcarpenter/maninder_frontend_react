@@ -20,7 +20,7 @@ const Homebanner = () => {
                 FINDING YOU A PLACE TO FEEL CLOSER TO HOME.
               </p>
               <p className="text-white text-center text-xl font-prata font-normal sm:text-2xl">
-                SERVING THE LOWER MAINLAND OVER 12 YEARS
+              Discover Your Perfect Space Today.
               </p>
             </div>
           </div>

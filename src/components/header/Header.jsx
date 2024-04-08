@@ -10,7 +10,9 @@ export default function Navbar() {
   const [propertiesOpen, setPropertiesOpen] = useState(false);
   const [buyingOpen, setBuyingOpen] = useState(false);
   const [sellingOpen, setSellingOpen] = useState(false);
+  const [sellingOpenMobile, setsellingOpenMobile] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [aboutOpenMobile, setaboutOpenMobile] = useState(false);
 
   const [isSideMenuOpen, setMenu] = useState(false);
   const asideRef = useRef(null);
@@ -89,43 +91,100 @@ export default function Navbar() {
                   <span className="flex-1 ms-3 whitespace-nowrap">Home</span>
                 </Link>
               </li>
+
               <li>
-                <Link
-                  to="/contact"
-                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
-                >
-                  <span className="flex-1 ms-3 whitespace-nowrap">
-                    Contact Us
-                  </span>
-                </Link>
+                <button
+                  onClick={() => setaboutOpenMobile(!aboutOpenMobile)}
+                  class="text-white   w-full pl-3
+                  flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group
+                 " type="button">
+                  About Us
+
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2" d="m1 1 4 4 4-4" />
+                  </svg>
+                </button>
+
+                {aboutOpenMobile && (
+                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                    <div className="py-1">
+                      <Link
+                        to="/about-us"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        About Us
+                      </Link>
+                      <Link
+                        to="/contact"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Contact Us
+                      </Link>
+                      <Link
+                        to="/testimonial"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Testimonial
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+
               </li>
+
               <li>
-                <Link
-                  to="/about-us"
-                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
-                >
-                  <span className="flex-1 ms-3 whitespace-nowrap">
-                    About Us
-                  </span>
-                </Link>
+                <button
+                  onClick={() => setsellingOpenMobile(!sellingOpenMobile)}
+                  class="text-white   w-full pl-3
+                  flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group
+                 " type="button">
+                    Buying
+
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2" d="m1 1 4 4 4-4" />
+                  </svg>
+                </button>
+
+                {sellingOpenMobile && (
+                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                    <div className="py-1">
+                    <Link
+                        to="/buyer-guide"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Buyer’s Guide
+                      </Link>
+                      <Link
+                        to="/MortgageCalculator"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Mortgage Calculator
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+
               </li>
+
               <li>
                 <Link
                   to="/blog"
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">Blog</span>
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/testimonial"
-                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
-                >
-                  <span className="flex-1 ms-3 whitespace-nowrap">
-                    Testimonial
-                  </span>
                 </Link>
               </li>
               <li>
@@ -138,6 +197,7 @@ export default function Navbar() {
                   </span>
                 </Link>
               </li>
+
               <li>
                 <Link
                   to="/login"
@@ -156,6 +216,7 @@ export default function Navbar() {
                   </span>
                 </Link>
               </li>
+
             </ul>
           </div>
         </aside>

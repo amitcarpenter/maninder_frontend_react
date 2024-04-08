@@ -8,7 +8,12 @@ import { Link } from "react-router-dom";
 
 import ContentToggle from "../../components/ContentToggle";
 import Footer from "../../components/footer/Footer";
+import MessageBox from "../../components/MessageBox";
+import { useMyContext } from "../../store/ContextApi";
+
 const Aboutpage = () => {
+
+  const { showMessageBox, handleClose } = useMyContext()
   return (
     <>
       <Header />
@@ -227,6 +232,9 @@ const Aboutpage = () => {
           <ContentToggle />
         </div>
       </div>
+      {showMessageBox && <MessageBox onClose={handleClose} />}
+
+
 
       <Footer />
     </>
