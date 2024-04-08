@@ -9,7 +9,7 @@ import Blogcontainer from "./pages/blog/Blogcontainer";
 import Singleblogpage from "./pages/blog/Singleblogpage";
 import Aboutpage from "./pages/About/Aboutpage";
 import Contactpage from "./pages/Contact/Contactpage";
-import Testimonialpage from "./pages/About/Testimonialpage";
+import Testimonialpage from "./pages/Testimonial/Testimonialpage";
 import FeaturesDetails from "./pages/Featured/FeaturesDetails";
 import BuyersGuide from "./pages/sell/BuyersGuide";
 import SellerGuide from "./pages/sell/SellerGuide";

@@ -51,7 +51,7 @@ const Homeslider = () => {
             class="  mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative cursor-pointer"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("./img/luxury-kitchen-remodel-maria-decotiis-interior-design-img~4e91c30902153c43_4-4253-1-12df3bb.jpg")`,
+              backgroundImage: `url("./img/residencial.jpg")`,
             }}
           >
             <div class="bg-black  bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -62,7 +62,7 @@ const Homeslider = () => {
                   </p>
                   <span className="px-2 inline-flex text-white  items-center rounded-lg bg-NewYello">
                     {" "}
-                    0 Listings{" "}
+                    16 Listings{" "}
                   </span>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const Homeslider = () => {
             class="  mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("./img/b_VANCOUVER-Martini-Interiors-453183-rela7f101b3.webp")`,
+              backgroundImage: `url("./img/condo.jpg")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -99,7 +99,7 @@ const Homeslider = () => {
             class=" mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("./img/contemporary-bathroom-design-with-golden-details.jpg")`,
+              backgroundImage: `url("./img/commercial.jpg")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -123,7 +123,7 @@ const Homeslider = () => {
             class="mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("./img/ellsworth-primary-bath-vancouver-02_51294893628_o-scaled.jpg")`,
+              backgroundImage: `url("./img/condo1.jpeg")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -134,7 +134,7 @@ const Homeslider = () => {
                   </p>
                   <span className="px-2 inline-flex text-white  items-center rounded-lg bg-NewYello">
                     {" "}
-                    0 Listings{" "}
+                    10 Listings{" "}
                   </span>
                 </div>
               </div>
