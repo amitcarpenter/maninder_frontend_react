@@ -40,15 +40,16 @@ const Blogcontainer = () => {
         style={{ backgroundImage: `url("/asset/bg-lines-svg.svg")` }}
       >
         <div>
-          <h1 className="text-2xl lg:text-6xl font-[400] mb-4 text-[#C5B351] ">
+          <h1 className="text-2xl  lg:text-6xl font-[400] mb-4 text-[#C5B351] ">
             Real Estate Blog
           </h1>
-          <p className="text-white text-xl text-center font-normal font-prata tracking-tight">
+          <p className="text-white sm:text-xl text-center font-normal font-prata tracking-tight">
             Read about the latest industry news
           </p>
         </div>
+        
       </div>
-      <div className="bg-[#fffcfc]">
+      <div className="bg-[#fffcfc] mb-5">
         <div className="container px-4 lg:px-10 py-6 mx-auto">
           <h1 className="text-2xl lg:text-4xl font-[400] mb-4">Blog List</h1>
           <div className="grid grid-cols-1 lg:grid-cols-[68%_auto] gap-14">

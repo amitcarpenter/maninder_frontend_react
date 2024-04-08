@@ -40,7 +40,7 @@ const Register = () => {
         <div className='bg-[#abb8c3]/10 h-full sm:h-screen flex justify-center items-center'>
             <div className='sm:mt-0 '>
                 <img
-                    className='h-36 mb-2 mx-auto '
+                    className='h-24 sm:h-36 mb-2 mx-auto '
                     src="./asset/Black logo - no background.png" alt="" />
 
                 <form

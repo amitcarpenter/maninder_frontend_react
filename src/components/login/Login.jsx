@@ -44,7 +44,7 @@ const Login = () => {
         <div className='bg-[#abb8c3]/10 h-screen flex justify-center items-center'>
             <div className=''>
                 <img
-                    className='h-32 mb-2'
+                    className='h-24 sm:h-32 mb-2'
                     src="./asset/Black logo - no background.png" alt="" />
 
                 <form

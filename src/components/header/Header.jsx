@@ -145,7 +145,7 @@ export default function Navbar() {
                   class="text-white   w-full pl-3
                   flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group
                  " type="button">
-                    Buying
+                  Buying
 
                   <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor"
@@ -158,7 +158,7 @@ export default function Navbar() {
                 {sellingOpenMobile && (
                   <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
                     <div className="py-1">
-                    <Link
+                      <Link
                         to="/buyer-guide"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
@@ -179,6 +179,15 @@ export default function Navbar() {
 
               </li>
 
+
+              <li>
+                <Link to="/seller-guide"
+                  className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
+                >
+                  <span className="flex-1 ms-3 whitespace-nowrap">Selling</span>
+                </Link>
+              </li>
+
               <li>
                 <Link
                   to="/blog"
@@ -187,6 +196,7 @@ export default function Navbar() {
                   <span className="flex-1 ms-3 whitespace-nowrap">Blog</span>
                 </Link>
               </li>
+
               <li>
                 <Link
                   to="/feature"

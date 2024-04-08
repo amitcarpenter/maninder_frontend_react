@@ -22,7 +22,7 @@ const BlogCard = ({ blog }) => {
     <>
       <div className="lg:max-w-sm relative p-1 bg-white shadow-lg  overflow-hidden rounded-lg border-[1px] border-[#f1f8ff] text-[#464646] ">
         <img
-          className=" w-full rounded-[10px] transition-transform duration-300 transform hover:scale-110 object-cover"
+          className="h-[230px] sm:h-[290px] w-full rounded-[10px] transition-transform duration-300 transform hover:scale-110 object-cover"
           src={`https://backend.artechworld.tech/uploads/blogs/tImages/${blog?.mainImage}`}
           alt=""
         />
@@ -38,7 +38,7 @@ const BlogCard = ({ blog }) => {
               __html: truncateHtml(blog?.content, 30),
             }}
           ></p>
-          <div className="absolute left-4 bottom-5">
+          <div className="absolute left-4 bottom-4">
             <Link
               to={`/singleblog/${blog?._id}`}
               className="flex cursor-pointer text-sm font-bold hover:text-NewYello justify-center items-center mt-2"

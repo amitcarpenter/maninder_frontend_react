@@ -99,7 +99,7 @@ const FeaturesDetails = () => {
       <div className="bg-[#fffcfc]">
         <div className="container mx-auto py-6 lg:py-16px-4 lg:px-10">
           <div className="flex justify-between items-center">
-            <div className="mb-6">
+            <div className="mb-6 px-4">
               <h1 className="text-2xl lg:text-4xl font-[400] mb-1  ">
                 {property?.["listing-item-entry-title"]}
               </h1>
