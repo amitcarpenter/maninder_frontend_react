@@ -15,7 +15,8 @@ import BuyersGuide from "./pages/sell/BuyersGuide";
 import SellerGuide from "./pages/sell/SellerGuide";
 import Register from "./components/login/Register";
 import MortgageCalculator from "./pages/MortgageCalculator/MortgageCalculator";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const location = useLocation();
@@ -44,9 +45,9 @@ function App() {
         {/* <Route path="/mortgage-calculator" element={<Register />} /> */}
         <Route path="/MortgageCalculator" element={<MortgageCalculator/>} />
 
-
+      
       </Routes>
-
+      <ToastContainer />
     </>
   );
 }

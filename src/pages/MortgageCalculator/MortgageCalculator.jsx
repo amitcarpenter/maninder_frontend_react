@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Header from "../../components/header/Header"
 import Footer from '../../components/footer/Footer';
+import MessageBox from '../../components/MessageBox';
+import { useMyContext } from '../../store/ContextApi';
 const MortgageCalculator = () => {
+
+  const { showMessageBox, handleClose } = useMyContext();
+
   const [monthlyPayment, setMonthlyPayment] = useState('');
   const [totalInterest, setTotalInterest] = useState('');
   const [amortizationData, setAmortizationData] = useState([]);
@@ -229,10 +234,11 @@ const MortgageCalculator = () => {
           </div>
         </div>
 
+        {showMessageBox && <MessageBox onClose={handleClose} />}
 
 
         <footer className="mt-12 border-t pt-6">
-          <p className="text-center">Written by Joel Vasallo</p>
+          <p className="text-center">Written by Maninder Singh </p>
         </footer>
       </div>
 

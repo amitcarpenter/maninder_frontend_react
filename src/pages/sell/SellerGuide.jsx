@@ -1,7 +1,13 @@
 import React from 'react';
 import Header from "../../components/header/Header"
 import Footer from '../../components/footer/Footer';
+import { useMyContext } from '../../store/ContextApi';
+import MessageBox from '../../components/MessageBox';
+
 const SellerGuide = () => {
+
+    const { showMessageBox, handleClose } = useMyContext();
+
     return (
 
 
@@ -58,6 +64,8 @@ const SellerGuide = () => {
                     </div>
                 </div>
             </div>
+            {showMessageBox && <MessageBox onClose={handleClose} />}
+
 
             <Footer />
         </>

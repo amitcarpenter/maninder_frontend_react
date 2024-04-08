@@ -175,12 +175,69 @@ export default function Navbar() {
               </Link>
             </li>
 
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+            {/* <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/buyer-guide" className="">
                 {" "}
                 BUYING{" "}
               </Link>
+            </li> */}
+
+            <li
+              className="  px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] "
+              onMouseEnter={() => setBuyingOpen(true)}
+              onMouseLeave={() => setBuyingOpen(false)}
+            >
+              <div className="relative inline-block text-left">
+                <button
+                  className="inline-flex justify-center w-full"
+                  aria-haspopup="true"
+                  aria-expanded={buyingOpen}
+                >
+                  BUYING
+                  <svg
+                    className="-mr-1 mt-10 ml-1 w-5 text-[#C5B351] h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 12.586L4.707 7.293a1 1 0 011.414-1.414L10 10.758l4.879-4.879a1 1 0 111.414 1.414L10 12.586z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+
+                {buyingOpen && (
+                  <div
+                    className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none"
+                    role="menu"
+                  >
+                    <div className="py-1">
+                      <Link
+                        to="/buyer-guide"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Buyer’s Guide
+                      </Link>
+                      <Link
+                        to="/MortgageCalculator"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Mortgage Calculator
+                      </Link>
+
+                    </div>
+                  </div>
+                )}
+              </div>
             </li>
+
+
             <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/seller-guide" className="">
                 {" "}
@@ -222,6 +279,7 @@ export default function Navbar() {
                   </svg>
                 </button>
 
+
                 {aboutOpen && (
                   <div
                     className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none"
@@ -254,16 +312,62 @@ export default function Navbar() {
                 )}
               </div>
             </li>
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
-              <Link to="/login" className="">
-                Sign In
-              </Link>
-            </li>
 
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
-              <Link to="/register" className="">
-                Sign Up
-              </Link>
+            <li
+              className="  px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] "
+              onMouseEnter={() => setSellingOpen(true)}
+              onMouseLeave={() => setSellingOpen(false)}
+            >
+              <div className="relative inline-block text-left">
+                <button
+                  className="inline-flex justify-center w-full"
+                  aria-haspopup="true"
+                  aria-expanded={buyingOpen}
+                >
+                  SIGN IN
+                  <svg
+                    className="-mr-1 mt-10 ml-1 w-5 text-[#C5B351] h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 12.586L4.707 7.293a1 1 0 011.414-1.414L10 10.758l4.879-4.879a1 1 0 111.414 1.414L10 12.586z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+
+                {sellingOpen && (
+                  <div
+                    className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none"
+                    role="menu"
+                  >
+                    <div className="py-1">
+
+
+                      <Link to="/login"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+
+                      >
+                        Sign In
+                      </Link>
+
+                      <Link to="/register"
+
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+
+                      >
+                        Sign Up
+                      </Link>
+
+                    </div>
+                  </div>
+                )}
+              </div>
             </li>
           </ul>
         </section>
