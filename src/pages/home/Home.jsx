@@ -11,6 +11,7 @@ import Homeslider from "./Homeslider";
 import DemoCarousel from "./DemoCarousel";
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { showMessageBox, handleClose } = useMyContext();
@@ -51,15 +52,23 @@ const Home = () => {
                   MISSION
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -77,15 +86,23 @@ const Home = () => {
                   SURREY
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -102,16 +119,25 @@ const Home = () => {
                 <p class="text-white text-2xl font-normal font-prata  tracking-tight ">
                   CHILLIWACK
                 </p>
+
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -129,15 +155,23 @@ const Home = () => {
                   MAPLE RIDGE
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -157,15 +191,23 @@ const Home = () => {
                   HOPE
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -183,15 +225,23 @@ const Home = () => {
                   HARRISON
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -207,15 +257,23 @@ const Home = () => {
                   ABBOTSFORD
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -233,15 +291,23 @@ const Home = () => {
                   LANGLEY
                 </p>
                 <div className="text-white content flex gap-2 mt-3">
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    House
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Condos
-                  </button>
-                  <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
-                    Tounhouses
-                  </button>
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      House
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Condos
+                    </button>
+                  </Link>
+
+                  <Link to="/feature">
+                    <button className="px-4 py-1.5 bg-black hover:bg-NewYello">
+                      Townhouses
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

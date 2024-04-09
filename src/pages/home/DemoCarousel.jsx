@@ -53,6 +53,7 @@ function DemoCarousel() {
         >
           {exclusiveListings.map((listing, index) => (
             <div key={index} className="border bg-white md:mx-5">
+              <a href="https://restaurantbusinessbroker.ca/restaurant-listings" target="_blank">
               <div
                 className=" relative w-full h-80  lg:h-96 bg-center  bg-no-repeat bg-cover"
                 style={{
@@ -68,6 +69,9 @@ function DemoCarousel() {
                   <p className="text-lg ">${listing.exclusive_price}</p>
                 </div>
               </div>
+              </a>
+              <a href="https://restaurantbusinessbroker.ca/restaurant-listings" target="_blank">
+             
               <div className="p-4">
                 <p>{listing.exclusive_address}</p>
                 <p className="flex gap-3 py-2">
@@ -87,6 +91,7 @@ function DemoCarousel() {
                   </span>
                 </p>
               </div>
+              </a>
             </div>
           ))}
         </Carousel>

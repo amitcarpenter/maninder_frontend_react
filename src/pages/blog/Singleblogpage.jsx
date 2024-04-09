@@ -13,6 +13,7 @@ import Footer from "../../components/footer/Footer";
 import { useParams } from "react-router-dom";
 import MessageBox from "../../components/MessageBox";
 import { useMyContext } from "../../store/ContextApi";
+import { Link } from "react-router-dom";
 
 import { Parser } from "html-to-react";
 
@@ -33,7 +34,7 @@ const Singleblogpage = () => {
       );
       const data = await response.json();
       if (data.status) {
-        const parsedBlogs = data.data;
+        const parsedBlogs = data.data.slice(0, 2); // Extract only the first two blogs
         setBlogs(parsedBlogs);
       } else {
         console.error("Failed to fetch blogs");
@@ -132,27 +133,42 @@ const Singleblogpage = () => {
                   </p>
                 </div>
 
-                <div className="flex gap-3  items-center mt-5">
+                <div className="flex gap-3  items-center mt-5 ">
                   <div
-                    className=" flex items-center 
-                                    justify-center w-10 h-10  rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
-                                    -full"
+                    className=" flex items-center justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
+                                                 -full"
                   >
-                    <FaLinkedinIn />
+                    <Link
+                      to="https://www.linkedin.com/in/maninder-singh-30674326b/"
+                      target="_blank"
+                    >
+                      <FaLinkedinIn />
+                    </Link>
                   </div>
                   <div
                     className=" flex items-center 
-                                    justify-center w-10 h-10 rounded-full  border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
-                                    -full"
+                                                   justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
+                                                  -full"
                   >
-                    <FaInstagram />
+                    <Link
+                      to="https://www.instagram.com/maninder_singh_realestate/"
+                      target="_blank"
+                    >
+                      <FaInstagram />
+                    </Link>
                   </div>
+
                   <div
                     className=" flex items-center 
-                                    justify-center w-10 h-10  rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
-                                    -full"
+                                                     justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
+                                                   -full"
                   >
-                    <FaFacebookF />
+                    <Link
+                      to="https://www.facebook.com/profile.php?id=100082839065240"
+                      target="_blank"
+                    >
+                      <FaFacebookF />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -234,7 +250,7 @@ const Singleblogpage = () => {
                 <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
                   <SearchForm />
                 </div>
-                <div className="p-6 rounded-lg shadow-lg bg-white">
+                {/* <div className="p-6 rounded-lg shadow-lg bg-white">
                   <h4 className="text-2xl font-medium mb-4">Latest Listings</h4>
 
                   <div className="py-3">
@@ -259,7 +275,7 @@ const Singleblogpage = () => {
                       })}
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

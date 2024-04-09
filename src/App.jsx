@@ -15,12 +15,12 @@ import BuyersGuide from "./pages/sell/BuyersGuide";
 import SellerGuide from "./pages/sell/SellerGuide";
 import Register from "./components/login/Register";
 import MortgageCalculator from "./pages/MortgageCalculator/MortgageCalculator";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Video from "./components/HomePageVideo/vidoe";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const location = useLocation();
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +29,6 @@ function App() {
   return (
     <>
       <Routes>
-
         <Route path="/" element={<Home />} />
         <Route path="/feature" element={<FeaturedPage />} />
         <Route path="/property/:id" element={<FeaturesDetails />} />
@@ -43,9 +42,8 @@ function App() {
         <Route path="/seller-guide" element={<SellerGuide />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/mortgage-calculator" element={<Register />} /> */}
-        <Route path="/MortgageCalculator" element={<MortgageCalculator/>} />
-
-      
+        <Route path="/MortgageCalculator" element={<MortgageCalculator />} />
+        <Route path="/video" element={<Video />} />
       </Routes>
       <ToastContainer />
     </>

@@ -172,7 +172,7 @@ const Contactpage = () => {
                 <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
                   <SearchForm />
                 </div>
-                <div className="p-6 rounded-lg shadow-lg bg-white">
+                {/* <div className="p-6 rounded-lg shadow-lg bg-white">
                   <h4 className="text-2xl font-medium mb-4">Latest Listings</h4>
 
                   <div className="py-3">
@@ -197,7 +197,7 @@ const Contactpage = () => {
                       })}
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

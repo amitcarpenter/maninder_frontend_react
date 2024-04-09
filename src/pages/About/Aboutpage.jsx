@@ -12,8 +12,7 @@ import MessageBox from "../../components/MessageBox";
 import { useMyContext } from "../../store/ContextApi";
 
 const Aboutpage = () => {
-
-  const { showMessageBox, handleClose } = useMyContext()
+  const { showMessageBox, handleClose } = useMyContext();
   return (
     <>
       <Header />
@@ -123,12 +122,11 @@ const Aboutpage = () => {
 
             <div
               className="w-full lg:w-[40%] h-[21rem] md:h-[52rem] lg:h-auto  rounded-xl  bg-no-repeat bg-cover"
-              style={{ backgroundImage: `url("././asset/20230908_093148_aout.jpg")` }}
+              style={{ backgroundImage: `url("././img/aboutImage.jpg")` }}
             ></div>
           </div>
         </div>
       </div>
-      
 
       <div
         className=" my-5 py-4 md:py-16 w-full bg-cover bg-no-repeat"
@@ -233,8 +231,6 @@ const Aboutpage = () => {
         </div>
       </div>
       {showMessageBox && <MessageBox onClose={handleClose} />}
-
-
 
       <Footer />
     </>
