@@ -78,11 +78,13 @@ export default function Navbar() {
               </span>
             </div>
 
-            <a href="#" className="flex items-center ps-2.5 mb-5">
+            <Link href="#" className="flex items-center ps-2.5 mb-5">
+
               {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" /> */}
               <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
-            </a>
+            </Link>
             <ul className=" font-medium">
+
               <li>
                 <Link
                   to="/"
@@ -109,7 +111,7 @@ export default function Navbar() {
                 </button>
 
                 {aboutOpenMobile && (
-                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100  shadow w-44 ">
                     <div className="py-1">
                       <Link
                         to="/about-us"
@@ -156,7 +158,7 @@ export default function Navbar() {
                 </button>
 
                 {sellingOpenMobile && (
-                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100  shadow w-44 ">
                     <div className="py-1">
                       <Link
                         to="/buyer-guide"
