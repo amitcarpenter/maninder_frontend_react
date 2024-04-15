@@ -8,13 +8,13 @@ const About = () => {
   return (
     <>
       <div
-        className="w-full bg-center  bg-no-repeat bg-cover"
+        className="w-full bg-center   bg-no-repeat  bg-cover"
         style={{ backgroundImage: `url("././asset/background_white.webp")` }}
       >
         <div className="container px-4 lg:px-10 mx-auto ">
           <div className="flex flex-wrap">
             <div
-              className="w-full lg:w-[40%] h-[28rem] md:h-[52rem] lg:h-auto bg-center rounded-xl  bg-no-repeat bg-cover"
+              className="w-full lg:w-[40%] h-[28rem] md:h-[52rem] lg:h-auto bg-center 2xl:bg-top rounded-xl  bg-no-repeat bg-cover"
               style={{ backgroundImage: `url("././asset/About_img_ori.jpg")` }}
             ></div>
 
