@@ -21,7 +21,7 @@ const About = () => {
             <div className="w-full lg:w-3/5 sm:py-14 md:pl-10 ">
               {/* <p className="text-xl italic mb-4">About</p> */}
               <h1 className="text-3xl lg:text-5xl font-[400] text-[#C5B351] capitalize  mb-5">
-                Maninder Singh, Your Local Realtor
+                Maninder Singh, Fraser Valley Realtor
               </h1>
 
               <div className="">

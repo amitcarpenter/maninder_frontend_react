@@ -19,7 +19,7 @@ const Homebanner = () => {
           <div className=" max-w-4xl mx-auto px-4 lg:px-10">
             <div>
               <p className="text-white text-center text-3xl sm:text-6xl font-prata font-normal sm:leading-snug mb-4">
-                FINDING YOU A PLACE TO FEEL CLOSER TO HOME.
+                YOUR TRUST OUR COMMITMENT{" "}
               </p>
               <p className="text-white text-center text-xl font-prata font-normal sm:text-2xl">
                 Discover Your Perfect Space Today.

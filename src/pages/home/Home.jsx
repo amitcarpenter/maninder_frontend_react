@@ -31,11 +31,11 @@ const Home = () => {
             Featured Neighborhoods
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            In the vibrant neighborhood of San Jose, California, Sam is renowned
-            among residents, property developers, local businesses, and
-            professionals in the real estate industry for her remarkable skills,
+            "In the vibrant location of Fraser Valley, Vancouver, Maninder is
+            esteemed among residents, property developers, local businesses, and
+            professionals in the real estate industry for his remarkable skills,
             dynamic approach, and tireless commitment to facilitating
-            transactions for buyers and sellers.
+            transactions for buyers and sellers."
           </p>
         </div>
 

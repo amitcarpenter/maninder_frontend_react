@@ -19,10 +19,10 @@ const Homeinfo = () => {
                 <h2 className=" text-xl lg:text-3xl font-medium">
                   Maninder Singh
                 </h2>
-                <p className="">Your Local Realtor</p>
+                <p className="">Fraser Valley Realtor</p>
               </div>
 
-              <p className="text-xl font-normal mt-2">Downtown | Abbotsford</p>
+              <p className="text-xl font-normal mt-2">Surrey | Abbotsford</p>
               <p className="m">#287-8128 128 Street Surrey</p>
               <p className="m">BC V3W 1R1</p>
               <div className="py-3">
