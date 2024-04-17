@@ -5,7 +5,7 @@ import Color_logo from "../../assets/Color_logo.png";
 import { RxCross2 } from "react-icons/rx";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
-
+import { FaWhatsapp } from "react-icons/fa6";
 export default function Navbar() {
   const [propertiesOpen, setPropertiesOpen] = useState(false);
   const [buyingOpen, setBuyingOpen] = useState(false);
@@ -254,7 +254,7 @@ export default function Navbar() {
                 BUYING{" "}
               </Link>
             </li> */}
-
+            {/* 
             <li
               className="  px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] "
               onMouseEnter={() => setBuyingOpen(true)}
@@ -308,15 +308,15 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            </li>
+            </li> */}
 
-
+            {/* 
             <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/seller-guide" className="">
                 {" "}
                 SELLING{" "}
               </Link>
-            </li>
+            </li> */}
 
             <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/blog" className="">
@@ -444,6 +444,11 @@ export default function Navbar() {
             </li>
           </ul>
         </section>
+
+        <div className="hidden sm:block">
+          <Link className="text-xl px-4 py-2 hover:bg-black bg-NewYello cursor-pointer flex items-center gap-2   ">  <FaWhatsapp className="h-5 w-5 ]" /> +1 (604) 715-2996</Link>
+        </div>
+
       </nav>
     </main>
   );
