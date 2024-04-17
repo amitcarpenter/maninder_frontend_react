@@ -95,9 +95,9 @@ const FeaturedPage = () => {
         <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {currentProperties.map((property, index) => (
             <div key={index} className=" mb-4">
-              <p className="font-semibold mb-1 md:h-20 overflow-hidden">
-                {property["listing-item-entry-title"]}
-              </p>
+              {/* <p className="font-semibold mb-1 md:h-20 overflow-hidden">
+                {property.additional_details}
+              </p> */}
               <div className="border p-2 relative h-[185px] overflow-hidden">
                 <img
                   className=" w-full transform transition-transform duration-3000 hover:scale-125"
@@ -109,11 +109,11 @@ const FeaturedPage = () => {
                 </div>
                 <div className="w-full flex justify-between absolute bottom-2">
                   <button className="px-4 py-2 bg-gray-50 text-red-500">
-                    <p>{property["summary-property-type"]}</p>
+                    <p>{property.additional_details.Property_Type}</p>
                   </button>
 
                   <button className="px-4 py-2 bg-gray-50 text-red-500">
-                    <p>{property["mrp-listing-price-container"]}</p>
+                    <p>{property.price}</p>
                   </button>
                 </div>
               </div>
@@ -144,19 +144,19 @@ const FeaturedPage = () => {
                       <tbody>
                         <tr className="bg-white border">
                           <td className="px-2 border py-1.5">
-                            {property["Status:"]}
+                            Active
                           </td>
                           <td className="px-2 border py-1.5">
-                            {property["MLS® Num:"]}
+                            {property.mls_number}
                           </td>
                           <td className="px-2 border py-1.5">
-                            {property["Bedrooms:"]}
+                            {property.bedrooms}
                           </td>
                           <td className="px-2 border py-1.5">
-                            {property["Bathrooms:"]}
+                            {property.bathrooms}
                           </td>
                           <td className="px-2 border py-1.5">
-                            {property["mrp-listing-price-container"]}
+                            {property.price}
                           </td>
                         </tr>
                       </tbody>
@@ -169,7 +169,7 @@ const FeaturedPage = () => {
                   ? property.description.split(" ").slice(0, 20).join(" ")
                   : ""}
               </p>
-              <p className="text-xs py-2 pl-1">Listed by {property.listedBy}</p>
+              <p className="text-xs py-2 pl-1">Listed on {property.listedBy}</p>
               <div className="flex justify-between">
                 <Link
                   to={`/property/${property._id}`}
