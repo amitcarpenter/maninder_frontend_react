@@ -12,6 +12,7 @@ import DemoCarousel from "./DemoCarousel";
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
 import { Link } from "react-router-dom";
+import MlsPowered from "./MlsPowered";
 
 const Home = () => {
   const { showMessageBox, handleClose } = useMyContext();
@@ -336,6 +337,7 @@ const Home = () => {
       {showMessageBox && <MessageBox onClose={handleClose} />}
 
       <Footer />
+      <MlsPowered />
     </>
   );
 };
