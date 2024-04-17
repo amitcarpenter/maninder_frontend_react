@@ -79,12 +79,10 @@ export default function Navbar() {
             </div>
 
             <Link href="#" className="flex items-center ps-2.5 mb-5">
-
               {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" /> */}
               <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
             </Link>
             <ul className=" font-medium">
-
               <li>
                 <Link
                   to="/"
@@ -99,19 +97,32 @@ export default function Navbar() {
                   onClick={() => setaboutOpenMobile(!aboutOpenMobile)}
                   class="text-white   w-full pl-3
                   flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group
-                 " type="button">
+                 "
+                  type="button"
+                >
                   About Us
-
-                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor"
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2" d="m1 1 4 4 4-4" />
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
                   </svg>
                 </button>
 
                 {aboutOpenMobile && (
-                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100  shadow w-44 ">
+                  <div
+                    id="dropdown"
+                    class="z-10  bg-white divide-y divide-gray-100  shadow w-44 "
+                  >
                     <div className="py-1">
                       <Link
                         to="/about-us"
@@ -137,8 +148,6 @@ export default function Navbar() {
                     </div>
                   </div>
                 )}
-
-
               </li>
 
               <li>
@@ -146,19 +155,32 @@ export default function Navbar() {
                   onClick={() => setsellingOpenMobile(!sellingOpenMobile)}
                   class="text-white   w-full pl-3
                   flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group
-                 " type="button">
+                 "
+                  type="button"
+                >
                   Buying
-
-                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor"
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2" d="m1 1 4 4 4-4" />
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
                   </svg>
                 </button>
 
                 {sellingOpenMobile && (
-                  <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100  shadow w-44 ">
+                  <div
+                    id="dropdown"
+                    class="z-10  bg-white divide-y divide-gray-100  shadow w-44 "
+                  >
                     <div className="py-1">
                       <Link
                         to="/buyer-guide"
@@ -177,13 +199,11 @@ export default function Navbar() {
                     </div>
                   </div>
                 )}
-
-
               </li>
 
-
               <li>
-                <Link to="/seller-guide"
+                <Link
+                  to="/seller-guide"
                   className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group"
                 >
                   <span className="flex-1 ms-3 whitespace-nowrap">Selling</span>
@@ -228,7 +248,6 @@ export default function Navbar() {
                   </span>
                 </Link>
               </li>
-
             </ul>
           </div>
         </aside>
@@ -352,7 +371,6 @@ export default function Navbar() {
                   </svg>
                 </button>
 
-
                 {aboutOpen && (
                   <div
                     className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none"
@@ -413,30 +431,25 @@ export default function Navbar() {
                   </svg>
                 </button>
 
-
                 {sellingOpen && (
                   <div
                     className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none"
                     role="menu"
                   >
                     <div className="py-1">
-
-
-                      <Link to="/login"
+                      <Link
+                        to="/login"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-
                       >
                         Sign In
                       </Link>
 
-                      <Link to="/register"
-
+                      <Link
+                        to="/register"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-
                       >
                         Sign Up
                       </Link>
-
                     </div>
                   </div>
                 )}
@@ -446,9 +459,15 @@ export default function Navbar() {
         </section>
 
         <div className="hidden sm:block">
-          <Link className="text-xl px-4 py-2 hover:bg-black bg-NewYello cursor-pointer flex items-center gap-2   ">  <FaWhatsapp className="h-5 w-5 ]" /> +1 (604) 715-2996</Link>
+          <Link
+            to="https://wa.me/16047152996"
+            target="_blank"
+            className="text-xl px-4 py-2 hover:bg-black bg-NewYello cursor-pointer flex items-center gap-2   "
+          >
+            {" "}
+            <FaWhatsapp className="h-5 w-5 ]" /> +1 (604) 715-2996
+          </Link>
         </div>
-
       </nav>
     </main>
   );
