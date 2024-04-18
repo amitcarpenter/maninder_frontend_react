@@ -8,6 +8,7 @@ import Rexara_Logo_Black from "../../assets/Rexara_Logo_Black.png";
 import black_logo_maninder from "../../assets/black_logo_maninder.png";
 import white_logo_maninder from "../../assets/white_logo_maninder.png";
 import { Link } from "react-router-dom";
+import MlsPowered from "../../pages/home/MlsPowered";
 
 const Footer = () => {
   return (
@@ -216,6 +217,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <MlsPowered />
     </>
   );
 };

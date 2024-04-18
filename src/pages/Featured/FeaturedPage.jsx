@@ -95,13 +95,17 @@ const FeaturedPage = () => {
         <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {currentProperties.map((property, index) => (
             <div key={index} className=" mb-4">
-              {/* <p className="font-semibold mb-1 md:h-20 overflow-hidden">
-                {property.additional_details}
-              </p> */}
+              <p className="font-semibold mb-1 md:h-20 overflow-hidden">
+                {property.address}
+              </p>
               <div className="border p-2 relative h-[185px] overflow-hidden">
                 <img
-                  className=" w-full transform transition-transform duration-3000 hover:scale-125"
-                  src={property.image_urls[0]}
+                  className="w-full h-[15rem]"
+                  src={
+                    property.image_urls.length > 0
+                      ? property.image_urls[0]
+                      : "https://www.realtor.ca/images/common/listingplaceholder-medres.jpg"
+                  }
                   alt=""
                 />
                 <div className="p-2 absolute top-2 right-2 bg-black/70 rounded-md">
@@ -119,7 +123,6 @@ const FeaturedPage = () => {
               </div>
               <div className="py-2">
                 <div className="relative">
-
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left rtl:text-right">
                       <thead className="text-xs text-gray-700 uppercase">
@@ -143,9 +146,7 @@ const FeaturedPage = () => {
                       </thead>
                       <tbody>
                         <tr className="bg-white border">
-                          <td className="px-2 border py-1.5">
-                            Active
-                          </td>
+                          <td className="px-2 border py-1.5">Active</td>
                           <td className="px-2 border py-1.5">
                             {property.mls_number}
                           </td>
