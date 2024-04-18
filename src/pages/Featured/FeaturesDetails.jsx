@@ -100,11 +100,11 @@ const FeaturesDetails = () => {
         <div className="container mx-auto py-6 lg:py-16px-4 lg:px-10">
           <div className="flex justify-between items-center">
             <div className="mb-6 px-4">
-              <h1 className="text-2xl lg:text-4xl font-[400] mb-1  ">
+              {/* <h1 className="text-2xl lg:text-4xl font-[400] mb-1  ">
                 {property?.["listing-item-entry-title"]}
-              </h1>
-              <p className="text-base py-2">{property?.["alt-addr"]}</p>
-              <p className="text-xs">{property?.["alt-subarea"]}</p>
+              </h1> */}
+              <p className="text-base py-2">{property?.address}</p>
+              {/* <p className="text-xs">{property?.["alt-subarea"]}</p> */}
             </div>
 
             <div></div>
@@ -117,12 +117,12 @@ const FeaturesDetails = () => {
             infinite={true}
             removeArrowOnDeviceType={["tablet", "mobile"]}
           >
-            {propertyImages.map((imageUrl, index) => (
+            {propertyImages.map((image_urls, index) => (
               <div
                 key={index}
                 className="bg-cover py-40 md:py-48  bg-no-repeat shadow overflow-hidden relative"
                 style={{
-                  backgroundImage: `url("${imageUrl}")`,
+                  backgroundImage: `url("${image_urls}")`,
                 }}
               >
                 <div className=""></div>
@@ -137,13 +137,11 @@ const FeaturesDetails = () => {
               <h6 className="text-2xl  font-[400] mb-6 underline underline-offset-8 ">
                 ABOUT{" "}
               </h6>
-              <p className="leading-relaxed mb-4">
-                {property?.["description"]}
-              </p>
+              <p className="leading-relaxed mb-4">{property?.description}</p>
 
-              <p className="leading-relaxed">
+              {/* <p className="leading-relaxed">
                 {property?.["additional_info"]["Legal Description:"]}
-              </p>
+              </p> */}
 
               <div className="py-5">
                 <div>
@@ -159,41 +157,27 @@ const FeaturesDetails = () => {
                             Property Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property?.["summary-property-type"]}
+                            {property?.additional_details.Property_Type}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                            Dwelling Type:
+                            Building Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-4"] &&
-                            property.property_info["info-section-REA-4"][
-                              "Dwelling Type:"
-                            ]
-                              ? property.property_info["info-section-REA-4"][
-                                  "Dwelling Type:"
-                                ]
+                            {property.additional_details.Building_Type
+                              ? property.additional_details.Building_Type
                               : "Not available"}
                           </td>
                         </tr>
 
                         <tr className="bg-gray-50">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                            Heating:
+                          Square Footage:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Heating:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Heating:"
-                                ]
+                            {property.additional_details.Square_Footage
+                              ? property.additional_details.Square_Footage
                               : "Not available"}
                           </td>
                         </tr>
