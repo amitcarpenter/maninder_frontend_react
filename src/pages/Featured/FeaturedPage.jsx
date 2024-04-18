@@ -76,7 +76,7 @@ const FeaturedPage = () => {
                 type="search"
                 id="default-search"
                 className="block w-full p-4 ps-10 text-sm text-gray-900 border  focus:outline-none  rounded-full bg-gray-50 "
-                placeholder="Search Mockups, Logos..."
+                placeholder="Enter a location or MLS® number"
                 required
               />
               <button
@@ -88,17 +88,37 @@ const FeaturedPage = () => {
             </div>
           </form>
           {Searchtogglemenu && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
               <div class="max-w-sm">
                 <select
                   id="countries"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Property Category</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
+                  <option selected>Residential </option>
+                  <option value="US"> Condo</option>
+                  <option value="CA">Commercial</option>
+                  {/* <option value="FR">France</option>
+                  <option value="DE">Germany</option> */}
+                </select>
+              </div>
+              <div class="max-w-sm ">
+                <select
+                  id="countries"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
+                >
+                  <option selected disabled>
+                    Choose a price range
+                  </option>
+                  <option value="0-100000">$0 - $100,000</option>
+                  <option value="100000-200000">$100,000 - $200,000</option>
+                  <option value="200000-300000">$200,000 - $300,000</option>
+                  <option value="300000-400000">$300,000 - $400,000</option>
+                  <option value="400000-500000">$400,000 - $500,000</option>
+                  <option value="500000-600000">$500,000 - $600,000</option>
+                  <option value="600000-700000">$600,000 - $700,000</option>
+                  <option value="700000-800000">$700,000 - $800,000</option>
+                  <option value="800000-900000">$800,000 - $900,000</option>
+                  <option value="900000+">$900,000+</option>
                 </select>
               </div>
               <div class="max-w-sm ">
@@ -106,11 +126,27 @@ const FeaturedPage = () => {
                   id="countries"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
+                  <option data-v-b892bd7a="" value="">
+                    Beds
+                  </option>
+                  <option data-v-b892bd7a="" value="1">
+                    1+
+                  </option>
+                  <option data-v-b892bd7a="" value="2">
+                    2+
+                  </option>
+                  <option data-v-b892bd7a="" value="3">
+                    3+
+                  </option>
+                  <option data-v-b892bd7a="" value="4">
+                    4+
+                  </option>
+                  <option data-v-b892bd7a="" value="5">
+                    5+
+                  </option>
+                  <option data-v-b892bd7a="" value="6">
+                    6+
+                  </option>
                 </select>
               </div>
               <div class="max-w-sm ">
@@ -118,11 +154,25 @@ const FeaturedPage = () => {
                   id="countries"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
+                  <option selected>Baths</option>
+                  <option data-v-b892bd7a="" value="1">
+                    1+
+                  </option>
+                  <option data-v-b892bd7a="" value="2">
+                    2+
+                  </option>
+                  <option data-v-b892bd7a="" value="3">
+                    3+
+                  </option>
+                  <option data-v-b892bd7a="" value="4">
+                    4+
+                  </option>
+                  <option data-v-b892bd7a="" value="5">
+                    5+
+                  </option>
+                  <option data-v-b892bd7a="" value="6">
+                    6+
+                  </option>
                 </select>
               </div>
               <div class="max-w-sm ">
@@ -130,11 +180,57 @@ const FeaturedPage = () => {
                   id="countries"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
+                  <option data-v-b892bd7a="" value="">
+                    Building Style
+                  </option>
+                  <option data-v-b892bd7a="" value="Bungalow">
+                    Bungalow
+                  </option>
+                  <option data-v-b892bd7a="" value="2-Storey">
+                    2-Storey
+                  </option>
+                  <option data-v-b892bd7a="" value="3-Storey">
+                    3-Storey
+                  </option>
+                  <option data-v-b892bd7a="" value="Bachelor/Studio">
+                    Bachelor/Studio
+                  </option>
+                  <option data-v-b892bd7a="" value="Apartment">
+                    Apartment
+                  </option>
+                  <option data-v-b892bd7a="" value="Backsplit 3">
+                    Backsplit 3
+                  </option>
+                  <option data-v-b892bd7a="" value="Backsplit 4">
+                    Backsplit 4
+                  </option>
+                  <option data-v-b892bd7a="" value="Backsplit 5">
+                    Backsplit 5
+                  </option>
+                  <option data-v-b892bd7a="" value="Bungaloft">
+                    Bungaloft
+                  </option>
+                  <option data-v-b892bd7a="" value="Bungalow-Raised">
+                    Bungalow-Raised
+                  </option>
+                  <option data-v-b892bd7a="" value="Sidesplit 3">
+                    Sidesplit 3
+                  </option>
+                  <option data-v-b892bd7a="" value="Sidesplit 4">
+                    Sidesplit 4
+                  </option>
+                  <option data-v-b892bd7a="" value="Sidesplit 5">
+                    Sidesplit 5
+                  </option>
+                  <option data-v-b892bd7a="" value="Stacked Townhouse">
+                    Stacked Townhouse
+                  </option>
+                  <option data-v-b892bd7a="" value="Loft">
+                    Loft
+                  </option>
+                  <option data-v-b892bd7a="" value="Multi-Level">
+                    Multi-Level
+                  </option>
                 </select>
               </div>
               <div class="max-w-sm ">
@@ -142,47 +238,48 @@ const FeaturedPage = () => {
                   id="countries"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
-                </select>
-              </div>
-              <div class="max-w-sm ">
-                <select
-                  id="countries"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
-                >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
-                </select>
-              </div>
-              <div class="max-w-sm ">
-                <select
-                  id="countries"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
-                >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
-                </select>
-              </div>
-              <div class="max-w-sm ">
-                <select
-                  id="countries"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
-                >
-                  <option selected>Choose a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
+                  <option data-v-b892bd7a="" value="" selected="selected">
+                    Square Feet
+                  </option>
+                  <option data-v-b892bd7a="" value="500">
+                    500+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="750">
+                    750+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="1000">
+                    1000+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="1250">
+                    1250+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="1500">
+                    1500+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="1750">
+                    1750+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="2000">
+                    2000+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="2250">
+                    2250+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="2500">
+                    2500+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="2750">
+                    2750+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="3000">
+                    3000+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="3250">
+                    3250+ sqft
+                  </option>
+                  <option data-v-b892bd7a="" value="3500">
+                    3500+ sqft
+                  </option>
                 </select>
               </div>
             </div>
@@ -191,10 +288,10 @@ const FeaturedPage = () => {
           <div className="mt-8 text-center mx-auto">
             <span
               onClick={TogglSearch}
-              className="text-lg font-normal cursor-pointer inline-flex   "
+              className="text-lg font-normal text-NewYello cursor-pointer inline-flex   "
             >
-              {" "}
-              Advance Search <IoIosArrowDown className="w-5 h-5 ml-2" />
+              Advanced Search 
+              <IoIosArrowDown className="w-5 h-5 ml-3" />
             </span>
           </div>
         </div>
@@ -223,7 +320,12 @@ const FeaturedPage = () => {
                 </div>
                 <div className="w-full flex justify-between absolute bottom-2">
                   <button className="px-4 py-2 bg-gray-50 text-red-500">
-                    <p>{property.additional_details.Property_Type}</p>
+                    {property.additional_details &&
+                    property.additional_details.Property_Type ? (
+                      <p>{property.additional_details.Property_Type}</p>
+                    ) : (
+                      <p>Not available</p>
+                    )}
                   </button>
 
                   <button className="px-4 py-2 bg-gray-50 text-red-500">

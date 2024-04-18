@@ -72,14 +72,8 @@ const CardList = () => {
                         <span className="flex items-center gap-2">
                           <IoCarSportOutline className="w-5 h-5" />{" "}
                           {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-5"] &&
-                          property.property_info["info-section-REA-5"][
-                            "Parking Total/Covered:"
-                          ]
-                            ? property.property_info["info-section-REA-5"][
-                                "Parking Total/Covered:"
-                              ]
+                          property.additional_details.Total_Parking_Spaces
+                            ? property.additional_details.Total_Parking_Spaces
                             : "?"}
                         </span>
 

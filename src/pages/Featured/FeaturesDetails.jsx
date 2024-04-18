@@ -165,326 +165,212 @@ const FeaturesDetails = () => {
                             Building Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property.additional_details.Building_Type
-                              ? property.additional_details.Building_Type
-                              : "Not available"}
+                            
+                               {property?.additional_details.Building_Type}
                           </td>
                         </tr>
 
                         <tr className="bg-gray-50">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Square Footage:
+                            Square Footage:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property.additional_details.Square_Footage
+                            {/* {property.additional_details.Square_Footage
                               ? property.additional_details.Square_Footage
-                              : "Not available"}
+                              : "Not available"} */}
+                               {property?.additional_details.Square_Footage}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                            Construction:
+                            Title:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Construction:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Construction:"
-                                ]
+                            {property && property.additional_details.Title
+                              ? property.additional_details.Title
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-gray-50">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                            Foundation:
+                            Land_Size:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Foundation:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Foundation:"
-                                ]
+                            {property && property.additional_details.Land_Size
+                              ? property.additional_details.Land_Size
                               : "Not available"}
                           </td>
                         </tr>
 
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-wrap font-bold">
-                            Basement:
+                            Built_in:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Basement:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Basement:"
-                                ]
+                            {property && property.additional_details.Built_in
+                              ? property.additional_details.Built_in
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Roof:
+                            Annual_Property_Taxes:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Roof:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Roof:"
-                                ]
+                            property.additional_details.Annual_Property_Taxes
+                              ? property.additional_details
+                                  .Annual_Property_Taxes
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Floor Finish:
+                            Parking_Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Floor Finish:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Floor Finish:"
-                                ]
+                            property.additional_details.Parking_Type
+                              ? property.additional_details.Parking_Type
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Parking:
+                            Total_Parking_Spaces:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Parking:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Parking:"
-                                ]
+                            property.additional_details.Total_Parking_Spaces
+                              ? property.additional_details.Total_Parking_Spaces
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Parking Total/Covered:
+                            Appliances_Included:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Parking Total/Covered:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Parking Total/Covered:"
-                                ]
+                            property.additional_details.Appliances_Included
+                              ? property.additional_details.Appliances_Included
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Parking Access:
+                            Fixtures_Included:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Parking Access:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Parking Access:"
-                                ]
+                            property.additional_details.Fixtures_Included
+                              ? property.additional_details.Fixtures_Included
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Exterior Finish:
+                            Style:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Exterior Finish:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Exterior Finish:"
-                                ]
+                            {property && property.additional_details.Style
+                              ? property.additional_details.Style
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Title to Land:
+                            Fire_Protection:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Title to Land:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Title to Land:"
-                                ]
+                            property.additional_details.Fire_Protection
+                              ? property.additional_details.Fire_Protection
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Suite:
+                            Building_Amenities:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
-                              "Suite:"
-                            ]
-                              ? property.property_info["info-section-REA-5"][
-                                  "Suite:"
-                                ]
+                            property.additional_details.Building_Amenities
+                              ? property.additional_details.Building_Amenities
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Property Disclosure:
+                            Storage:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Property Disclosure:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Property Disclosure:"
-                                ]
+                            {property && property.additional_details.Storage
+                              ? property.additional_details.Storage
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Fixtures Leased:
+                            Fireplace:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Fixtures Leased:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Fixtures Leased:"
-                                ]
+                            {property && property.additional_details.Fireplace
+                              ? property.additional_details.Fireplace
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Fixtures Removed:
+                            Heating_Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Fixtures Removed:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Fixtures Removed:"
-                                ]
+                            property.additional_details.Heating_Type
+                              ? property.additional_details.Heating_Type
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Cats:
+                            Utility_Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Cats:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Cats:"
-                                ]
+                            property.additional_details.Utility_Type
+                              ? property.additional_details.Utility_Type
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Dogs:
+                            Water:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Dogs:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Dogs:"
-                                ]
+                            {property && property.additional_details.Water
+                              ? property.additional_details.Water
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Reno / Year:
+                            Community_Features:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Reno / Year:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Reno / Year:"
-                                ]
+                            property.additional_details.Community_Features
+                              ? property.additional_details.Community_Features
                               : "Not available"}
                           </td>
                         </tr>
                         <tr className="bg-white">
                           <td className="px-6 py-2 whitespace-nowrap font-bold">
-                            Services Connected:
+                            Maintenance_Fees:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
-                              "Services Connected:"
-                            ]
-                              ? property.property_info["info-section-REA-7"][
-                                  "Services Connected:"
-                                ]
+                            property.additional_details.Maintenance_Fees
+                              ? property.additional_details.Maintenance_Fees
                               : "Not available"}
                           </td>
                         </tr>
@@ -510,7 +396,7 @@ const FeaturesDetails = () => {
                           List Price:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap text-2xl text-NewYello">
-                          {property?.["mrp-listing-price-container"]}
+                          {property?.price}
                         </td>
                       </tr>
                       <tr className="bg-white">
@@ -518,7 +404,7 @@ const FeaturesDetails = () => {
                           MLS®:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property?.["MLS® Num:"]}
+                          {property?.mls_number}
                         </td>
                       </tr>
                       <tr className="bg-gray-50">
@@ -526,15 +412,8 @@ const FeaturesDetails = () => {
                           Style:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"][
-                            "Home Style:"
-                          ]
-                            ? property.property_info["info-section-REA-4"][
-                                "Home Style:"
-                              ]
+                          {property && property.additional_details.Style
+                            ? property.additional_details.Style
                             : "Not available"}
                         </td>
                       </tr>
@@ -543,7 +422,7 @@ const FeaturesDetails = () => {
                           Bedrooms:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property?.["Bedrooms:"]}
+                          {property?.bedrooms}
                         </td>
                       </tr>
                       <tr className="bg-gray-50">
@@ -551,58 +430,46 @@ const FeaturesDetails = () => {
                           Bathrooms:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property?.["Bathrooms:"]}
+                          {property?.bathrooms}
                         </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Year Built:
+                          Area:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"][
-                            "Year built:"
-                          ]
-                            ? property.property_info["info-section-REA-4"][
-                                "Year built:"
-                              ]
+                          {property && property.area
+                            ? property.area
                             : "Not available"}
                         </td>
                       </tr>
-                      <tr className="bg-white">
+                      {/* <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-nowrap font-bold">
                           Floor Space:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property?.["Floor Area:"]}
                         </td>
-                      </tr>
+                      </tr> */}
                       <tr className="bg-gray-50">
                         <td className="px-6 py-2 whitespace-nowrap font-bold">
-                          Condo Fees:
+                          Maintenance_Fees:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property["additional_info"] &&
-                          property["additional_info"]["Maint. Fees:"]
-                            ? property["additional_info"]["Maint. Fees:"]
+                          property.additional_details.Maintenance_Fees
+                            ? property.additional_details.Maintenance_Fees
                             : "Not available"}
                         </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Taxes:
+                          Annual_Property_Taxes:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"]["Taxes:"]
-                            ? property.property_info["info-section-REA-4"][
-                                "Taxes:"
-                              ]
+                          property.additional_details.Annual_Property_Taxes
+                            ? property.additional_details.Annual_Property_Taxes
                             : "Not available"}
                         </td>
                       </tr>
@@ -611,15 +478,15 @@ const FeaturesDetails = () => {
                           Features:
                         </td>
                         <td className="px-6 py-2 ">
-                          {property?.["additional_info"]["Features Included:"]}
+                          {property?.additional_details.Features}
                         </td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Amenities:
+                          Landscape_Features:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property?.["additional_info"]["Amenities:"]}
+                          {property?.additional_details.Amenities}
                         </td>
                       </tr>
                       <tr className="bg-white">
@@ -627,7 +494,7 @@ const FeaturesDetails = () => {
                           Address:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          {property?.["alt-addr"]}
+                          {property?.address}
                         </td>
                       </tr>
                     </tbody>
