@@ -13,8 +13,40 @@ const FeaturedPage = () => {
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [propertiesPerPage] = useState(9);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const { showMessageBox, handleClose } = useMyContext();
+
+  const [filters, setFilters] = useState({});
+
+  const handleSubmit = async () => {
+    try {
+      const queryParams = new URLSearchParams(filters).toString();
+      console.log(queryParams);
+      const response = await fetch(
+        `https://backend.artechworld.tech/api/property/filter?${queryParams}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setProperties(data.data);
+        console.log(data);
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = (key, value) => {
+    setFilters({ ...filters, [key]: value });
+  };
+
+  useEffect(() => {
+    handleSubmit(); // Call handleSubmit after updating the state
+    console.log(filters);
+  }, [filters]); // Run this effect whenever the filters state changes
+
   useEffect(() => {
     fetch("https://backend.artechworld.tech/api/admin/property/list/all")
       .then((response) => response.json())
@@ -30,6 +62,31 @@ const FeaturedPage = () => {
         console.error("Error fetching properties:", error);
       });
   }, []);
+
+  const handleSearchSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(
+        `https://backend.artechworld.tech/api/property/search?location=${searchQuery}`
+      );
+      const data = await response.json();
+
+      if (data.status) {
+        setProperties(data.data);
+      } else {
+        // Handle error response
+        console.error("Error fetching properties:", data.message);
+      }
+    } catch (error) {
+      // Handle network or server errors
+      console.error("Error fetching properties:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   // Logic for pagination
   const indexOfLastProperty = currentPage * propertiesPerPage;
@@ -53,7 +110,10 @@ const FeaturedPage = () => {
         style={{ backgroundImage: `url("/asset/bg-lines-svg.svg")` }}
       >
         <div className=" w-full px-4 lg:px-10">
-          <form className=" mx-auto w-full px-4 lg:w-1/2">
+          <form
+            className="mx-auto w-full px-4 lg:w-1/2"
+            onSubmit={handleSearchSubmit}
+          >
             <div className="relative">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg
@@ -78,6 +138,8 @@ const FeaturedPage = () => {
                 className="block w-full p-4 ps-10 text-sm text-gray-900 border  focus:outline-none  rounded-full bg-gray-50 "
                 placeholder="Enter a location or MLS® number"
                 required
+                value={searchQuery}
+                onChange={handleInputChange}
               />
               <button
                 type="submit"
@@ -91,24 +153,31 @@ const FeaturedPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
               <div class="max-w-sm">
                 <select
-                  id="countries"
+                  id="PropertyType"
+                  value={filters.PropertyType}
+                  onChange={(event) =>
+                    handleChange("PropertyType", event.target.value)
+                  }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Residential </option>
-                  <option value="US"> Condo</option>
-                  <option value="CA">Commercial</option>
-                  {/* <option value="FR">France</option>
-                  <option value="DE">Germany</option> */}
+                  <option selected value="">
+                    Choose Property Type
+                  </option>
+                  <option value="Single Family">Single Family</option>
+                  <option value="Vacant Land">Vacant Land</option>
+                  <option value="Multi-family">Multi-family</option>
                 </select>
               </div>
               <div class="max-w-sm ">
                 <select
-                  id="countries"
+                  id="priceRange"
+                  value={filters.priceRange}
+                  onChange={(event) =>
+                    handleChange("priceRange", event.target.value)
+                  }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
                 >
-                  <option selected disabled>
-                    Choose a price range
-                  </option>
+                  <option selected>Choose a price range</option>
                   <option value="0-100000">$0 - $100,000</option>
                   <option value="100000-200000">$100,000 - $200,000</option>
                   <option value="200000-300000">$200,000 - $300,000</option>
@@ -123,7 +192,9 @@ const FeaturedPage = () => {
               </div>
               <div class="max-w-sm ">
                 <select
-                  id="countries"
+                  id="beds"
+                  value={filters.beds}
+                  onChange={(event) => handleChange("beds", event.target.value)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
                   <option data-v-b892bd7a="" value="">
@@ -151,7 +222,11 @@ const FeaturedPage = () => {
               </div>
               <div class="max-w-sm ">
                 <select
-                  id="countries"
+                  id="baths"
+                  value={filters.baths}
+                  onChange={(event) =>
+                    handleChange("baths", event.target.value)
+                  }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
                   <option selected>Baths</option>
@@ -177,65 +252,37 @@ const FeaturedPage = () => {
               </div>
               <div class="max-w-sm ">
                 <select
-                  id="countries"
+                  id="buildingStyle"
+                  value={filters.buildingStyle}
+                  onChange={(event) =>
+                    handleChange("buildingStyle", event.target.value)
+                  }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
                   <option data-v-b892bd7a="" value="">
-                    Building Style
-                  </option>
-                  <option data-v-b892bd7a="" value="Bungalow">
-                    Bungalow
-                  </option>
-                  <option data-v-b892bd7a="" value="2-Storey">
-                    2-Storey
-                  </option>
-                  <option data-v-b892bd7a="" value="3-Storey">
-                    3-Storey
-                  </option>
-                  <option data-v-b892bd7a="" value="Bachelor/Studio">
-                    Bachelor/Studio
+                    Building Type
                   </option>
                   <option data-v-b892bd7a="" value="Apartment">
                     Apartment
                   </option>
-                  <option data-v-b892bd7a="" value="Backsplit 3">
-                    Backsplit 3
+                  <option data-v-b892bd7a="" value="House">
+                    House
                   </option>
-                  <option data-v-b892bd7a="" value="Backsplit 4">
-                    Backsplit 4
+                  <option data-v-b892bd7a="" value="Duplex">
+                    Duplex
                   </option>
-                  <option data-v-b892bd7a="" value="Backsplit 5">
-                    Backsplit 5
-                  </option>
-                  <option data-v-b892bd7a="" value="Bungaloft">
-                    Bungaloft
-                  </option>
-                  <option data-v-b892bd7a="" value="Bungalow-Raised">
-                    Bungalow-Raised
-                  </option>
-                  <option data-v-b892bd7a="" value="Sidesplit 3">
-                    Sidesplit 3
-                  </option>
-                  <option data-v-b892bd7a="" value="Sidesplit 4">
-                    Sidesplit 4
-                  </option>
-                  <option data-v-b892bd7a="" value="Sidesplit 5">
-                    Sidesplit 5
-                  </option>
-                  <option data-v-b892bd7a="" value="Stacked Townhouse">
-                    Stacked Townhouse
-                  </option>
-                  <option data-v-b892bd7a="" value="Loft">
-                    Loft
-                  </option>
-                  <option data-v-b892bd7a="" value="Multi-Level">
-                    Multi-Level
+                  <option data-v-b892bd7a="" value="Townhouse">
+                    Townhouse
                   </option>
                 </select>
               </div>
               <div class="max-w-sm ">
                 <select
-                  id="countries"
+                  id="squareFeet"
+                  value={filters.squareFeet}
+                  onChange={(event) =>
+                    handleChange("squareFeet", event.target.value)
+                  }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
                   <option data-v-b892bd7a="" value="" selected="selected">
@@ -290,7 +337,7 @@ const FeaturedPage = () => {
               onClick={TogglSearch}
               className="text-lg font-normal text-NewYello cursor-pointer inline-flex   "
             >
-              Advanced Search 
+              Advanced Search
               <IoIosArrowDown className="w-5 h-5 ml-3" />
             </span>
           </div>
