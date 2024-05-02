@@ -67,7 +67,7 @@ const Login = () => {
                     </div>
                     <div className="flex items-center justify-between mb-5">
                         <button type="submit" className="text-white bg-NewYello hover:bg-NewYello focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm  sm:w-auto px-4 py-2 text-center">Login</button>
-                        <Link to="#" className="ms-2 text-sm font-medium text-blue-500 hover:underline">Forgot password ? </Link>
+                        {/* <Link to="#" className="ms-2 text-sm font-medium text-blue-500 hover:underline">Forgot password ? </Link> */}
                     </div>
                 </form>
             </div>

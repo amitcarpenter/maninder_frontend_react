@@ -7,18 +7,18 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 
-import BlogCard from "../../components/BlogCard";
-import SearchForm from "../../components/SearchForm";
+// import BlogCard from "../../components/BlogCard";
+// import SearchForm from "../../components/SearchForm";
 import Footer from "../../components/footer/Footer";
 
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
 
 import { Link } from "react-router-dom";
+import LatestblogCard from "../../components/LatestblogCard";
 
 const Contactpage = () => {
-  const data = [1, 2, 4];
-  const { showMessageBox, handleClose } = useMyContext();
+  const { showMessageBox, handleClose, properties } = useMyContext();
   return (
     <>
       <Header />
@@ -100,7 +100,9 @@ const Contactpage = () => {
                   </p>
                   <p className="mb-1">
                     <strong>Address:</strong>{" "}
-                    <span className="pl-3">#287-8128 128 Street Surrey, BC V3W 1R1</span>{" "}
+                    <span className="pl-3">
+                      #287-8128 128 Street Surrey, BC V3W 1R1
+                    </span>{" "}
                   </p>
                 </div>
 
@@ -169,35 +171,25 @@ const Contactpage = () => {
             {/* side bloge sect */}
             <div className="relative">
               <div className="sticky top-0 ">
-                <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
+                {/* <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
                   <SearchForm />
-                </div>
-                {/* <div className="p-6 rounded-lg shadow-lg bg-white">
+                </div> */}
+                <div className="p-6 rounded-lg shadow-lg bg-white">
                   <h4 className="text-2xl font-medium mb-4">Latest Listings</h4>
 
                   <div className="py-3">
                     <div className="flex flex-col space-y-3">
-                      {data.map((item) => {
+                      {properties.slice(6, 10).map((property, index) => {
                         return (
                           <>
-                            <div className="flex justify-between items-center">
-                              <img
-                                className=" w-28 rounded-xl object-cover"
-                                src="https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.6-525x328.webp"
-                                alt=""
-                              />
-
-                              <div className="pl-3">
-                                <p>Villa with panoramic view</p>
-                                <p className="text-NewYello">$ 5,500,000</p>
-                              </div>
-                            </div>
+                            <LatestblogCard property={property} key={index} />
                           </>
                         );
                       })}
                     </div>
                   </div>
-                </div> */}
+                </div>{" "}
+                *
               </div>
             </div>
           </div>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import SearchForm from "../../components/SearchForm";
+// import SearchForm from "../../components/SearchForm";
 import BlogCard from "../../components/BlogCard";
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
+import LatestblogCard from "../../components/LatestblogCard";
 
 const Blogcontainer = () => {
-  const { showMessageBox, handleClose } = useMyContext();
+  const { showMessageBox, handleClose, properties } = useMyContext();
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -47,7 +48,6 @@ const Blogcontainer = () => {
             Read about the latest industry news
           </p>
         </div>
-        
       </div>
       <div className="bg-[#fffcfc] mb-5">
         <div className="container px-4 lg:px-10 py-6 mx-auto">
@@ -64,14 +64,20 @@ const Blogcontainer = () => {
             {/* side blog section */}
             <div className="relative">
               <div className="sticky top-0">
-                <div className="p-6 rounded-lg shadow-lg bg-white mb-5">
+                {/* <div className="p-6 rounded-lg shadow-lg bg-white mb-5">
                   <SearchForm />
-                </div>
+                </div> */}
                 <div className="p-6 rounded-lg shadow-lg bg-white">
                   <h4 className="text-2xl font-medium mb-4">Latest Listings</h4>
                   <div className="py-3">
                     <div className="flex flex-col space-y-3">
-                      {/* Latest listings here */}
+                      {properties.slice(2, 6).map((property, index) => {
+                        return (
+                          <>
+                            <LatestblogCard property={property} key={index} />
+                          </>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

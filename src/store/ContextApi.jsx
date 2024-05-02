@@ -5,7 +5,7 @@ const MyContext = createContext();
 
 const MyProvider = (props) => {
   const [showMessageBox, setShowMessageBox] = useState(false);
-
+  const [properties, setProperties] = useState([]);
   const location = useLocation();
 
   useEffect(() => {
@@ -18,8 +18,25 @@ const MyProvider = (props) => {
   const handleClose = () => {
     setShowMessageBox(false);
   };
+
+  useEffect(() => {
+    fetch("https://backend.artechworld.tech/api/admin/property/list/all")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status && data.data) {
+          setProperties(data.data);
+          console.log(data.data);
+        } else {
+          console.error("Failed to fetch properties:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching properties:", error);
+      });
+  }, []);
+
   return (
-    <MyContext.Provider value={{ showMessageBox, handleClose }}>
+    <MyContext.Provider value={{ showMessageBox, handleClose, properties }}>
       {props.children}
     </MyContext.Provider>
   );

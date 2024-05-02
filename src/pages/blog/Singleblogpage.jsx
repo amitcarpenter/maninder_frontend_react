@@ -14,11 +14,13 @@ import { useParams } from "react-router-dom";
 import MessageBox from "../../components/MessageBox";
 import { useMyContext } from "../../store/ContextApi";
 import { Link } from "react-router-dom";
-
 import { Parser } from "html-to-react";
+import LatestblogCard from "../../components/LatestblogCard";
 
 const Singleblogpage = () => {
-  const { showMessageBox, handleClose } = useMyContext();
+
+
+  const { showMessageBox, handleClose,properties } = useMyContext();
   const data = [1, 2, 3, 4, 5];
   const [blogs, setBlogs] = useState([]);
   const [Singleblogs, setSingleblogs] = useState({});
@@ -174,7 +176,7 @@ const Singleblogpage = () => {
               </div>
 
               {/* related form*/}
-              <div className="   bg-white shadow-lg  overflow-hidden rounded p-2  md:p-7 text-[#464646] my-5">
+              {/* <div className="   bg-white shadow-lg  overflow-hidden rounded p-2  md:p-7 text-[#464646] my-5">
                 <h1 className=" text-black text-2xl lg:text-3xl font-[400] mb-2  ">
                   {" "}
                   Leave a Reply
@@ -229,7 +231,7 @@ const Singleblogpage = () => {
                     Post Comment
                   </button>
                 </form>
-              </div>
+              </div> */}
 
               {/* related blogs */}
               <div className="py-6">
@@ -247,35 +249,24 @@ const Singleblogpage = () => {
             {/* side bloge sect */}
             <div className="relative">
               <div className="sticky top-0 ">
-                <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
-                  <SearchForm />
-                </div>
-                {/* <div className="p-6 rounded-lg shadow-lg bg-white">
+                {/* <div className="p-6  rounded-lg shadow-lg bg-white mb-5">
+                   <SearchForm /> 
+                </div> */}
+                <div className="p-6 rounded-lg shadow-lg bg-white">
                   <h4 className="text-2xl font-medium mb-4">Latest Listings</h4>
 
                   <div className="py-3">
                     <div className="flex flex-col space-y-3">
-                      {data.map((item) => {
+                    {properties.slice(6, 10).map((property, index) => {
                         return (
                           <>
-                            <div className="flex justify-between items-center">
-                              <img
-                                className=" w-28 rounded-xl object-cover"
-                                src="https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.6-525x328.webp"
-                                alt=""
-                              />
-
-                              <div className="pl-3">
-                                <p>Villa with panoramic view</p>
-                                <p className="text-NewYello">$ 5,500,000</p>
-                              </div>
-                            </div>
+                            <LatestblogCard property={property} key={index} />
                           </>
                         );
                       })}
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

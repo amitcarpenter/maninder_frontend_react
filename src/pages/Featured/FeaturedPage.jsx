@@ -8,6 +8,8 @@ import { MdOutlineBathroom } from "react-icons/md";
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
 import { IoIosArrowDown } from "react-icons/io";
+
+
 const FeaturedPage = () => {
   const [Searchtogglemenu, setSearchtogglemenu] = useState(false);
   const [properties, setProperties] = useState([]);

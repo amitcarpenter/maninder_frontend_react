@@ -155,7 +155,7 @@ const Footer = () => {
                       <a href="/login">Login </a>
                     </li>
                     <li>
-                      <a href="/sign-up">Register</a>
+                      <a href="/register">Register</a>
                     </li>
                   </nav>
                 </div>
