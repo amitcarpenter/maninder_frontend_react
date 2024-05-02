@@ -177,7 +177,7 @@ const FeaturedPage = () => {
                   }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
                 >
-                  <option selected>Choose a price range</option>
+                  <option selected value="">Choose a price range</option>
                   <option value="0-100000">$0 - $100,000</option>
                   <option value="100000-200000">$100,000 - $200,000</option>
                   <option value="200000-300000">$200,000 - $300,000</option>
@@ -197,7 +197,7 @@ const FeaturedPage = () => {
                   onChange={(event) => handleChange("beds", event.target.value)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option data-v-b892bd7a="" value="">
+                  <option data-v-b892bd7a=""  value="">
                     Beds
                   </option>
                   <option data-v-b892bd7a="" value="1">
@@ -229,7 +229,7 @@ const FeaturedPage = () => {
                   }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected>Baths</option>
+                  <option selected  value="">Baths</option>
                   <option data-v-b892bd7a="" value="1">
                     1+
                   </option>
