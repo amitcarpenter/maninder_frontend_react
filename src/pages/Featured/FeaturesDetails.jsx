@@ -10,6 +10,8 @@ import axios from "axios";
 
 import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
+import { toast } from "react-toastify";
+
 const FeaturesDetails = () => {
   const data = [1, 2, 3, 4];
 
@@ -42,7 +44,7 @@ const FeaturesDetails = () => {
     const fetchPropertyData = async () => {
       try {
         const response = await axios.get(
-          `https://backend.artechworld.tech/api/property/${id}`
+          `https://api.maninderrealestate.com/api/property/${id}`
         );
         setPropertyImages(response.data[0].image_urls);
         setProperty(response.data[0]);
@@ -53,6 +55,54 @@ const FeaturesDetails = () => {
     fetchPropertyData();
   }, [id]);
 
+  //Contact Form Api
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const apiUrl = "https://api.maninderrealestate.com/api/contact";
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // alert("Form submitted successfully!");
+        toast.success("Email Sent SuccessFully", { autoClose: 2000 });
+        // Optionally, you can reset the form fields here
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          description: "",
+        });
+      } else {
+        // const errorData = await response.json();
+        // throw new Error(errorData.message || "Something went wrong");
+        toast.error("Email Failed ", { autoClose: 2000 });
+      }
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  };
   return (
     <>
       <Header />
@@ -165,8 +215,7 @@ const FeaturesDetails = () => {
                             Building Type:
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
-                            
-                               {property?.additional_details.Building_Type}
+                            {property?.additional_details.Building_Type}
                           </td>
                         </tr>
 
@@ -178,7 +227,7 @@ const FeaturesDetails = () => {
                             {/* {property.additional_details.Square_Footage
                               ? property.additional_details.Square_Footage
                               : "Not available"} */}
-                               {property?.additional_details.Square_Footage}
+                            {property?.additional_details.Square_Footage}
                           </td>
                         </tr>
                         <tr className="bg-white">
@@ -501,16 +550,19 @@ const FeaturesDetails = () => {
                   </table>
                 </div>
                 <div className="py-6">
-                  <form class=" w-full bg-white shadow-lg text-[#464646] lg:mt-8 p-8">
+                  <form
+                    class=" w-full bg-white shadow-lg text-[#464646] lg:mt-8 p-8"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="flex gap-4 mb-4">
                       <div>
                         <img
-                          className="w-28"
+                          className="w-20"
                           src="https://crm.artechworld.tech/images/faces/facemaninder.png"
                           alt=""
                         />
                       </div>
-                      <div>
+                      <div className="mt-3">
                         <p>
                           Maninder Singh <br />
                           <span className="text-NewYello">Realtor</span>
@@ -523,33 +575,58 @@ const FeaturesDetails = () => {
                         class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
                         placeholder=" Your Name"
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
                       <input
                         class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
-                        placeholder="Your Email "
+                        placeholder="Your Email"
                         type="text"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
                       <input
                         class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
-                        placeholder="Your Mobile "
+                        placeholder="Your Phone Number "
                         type="text"
+                        name="phone"
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
+                        placeholder="Subject "
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
                       />
                     </div>
 
                     <div className="mb-3">
                       <textarea
                         className=" my-3 border w-full rounded-lg px-4 focus:outline-none border-gray-300 py-2"
-                        placeholder="Im interested in  Gorgeous studio for rent  "
+                        placeholder="Message"
                         cols="6"
                         rows="5"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
                       ></textarea>
                     </div>
                     <div className="mt-6">
-                      <button className="text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black    focus:outline-none block w-full p-2.5 ">
+                      <button
+                        type="submit"
+                        className="text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black    focus:outline-none block w-full p-2.5 "
+                      >
                         Send Email
                       </button>
                     </div>

@@ -1,8 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaSkype } from "react-icons/fa";
 import { FaEnvelope, FaVoicemail } from "react-icons/fa6";
+import { toast } from "react-toastify";
+
 const Homeinfo = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const apiUrl = "https://api.maninderrealestate.com/api/contact";
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log(response)
+        toast.success("Email Sent SuccessFully", { autoClose: 2000 });
+        // alert("Form submitted successfully!");
+        // Optionally, you can reset the form fields here
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          description: "",
+        });
+      } else {
+        toast.error("Email Failed ", { autoClose: 2000 });
+        // throw new Error(errorData.message || "Something went wrong");
+      }
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  };
+
   return (
     <div className=" py-5 lg:py-20 bg-[#abb8c3]/10 ">
       <div className="container lg:px-10 mx-auto ">
@@ -54,105 +104,117 @@ const Homeinfo = () => {
 
           <div className="px-4 lg:px-0">
             <div className="mb-5">
-              <h2 className="text-3xl lg:text-5xl font-[400]  text-[#C5B351]  mb-3">
+              <h2 className="text-3xl lg:text-5xl font-[400] text-[#C5B351] mb-3">
                 Contact Us
               </h2>
               <p className=" ">Relax, we're here to help.</p>
             </div>
-
-            <div>
-              <form className="p-6 lg:p-12 bg-white text-black " action="">
-                <div className=" ">
-                  <div className="flex flex-wrap ">
-                    <div className="p-1 w-full sm:w-1/2">
-                      <div className="relative">
-                        <label
-                          htmlFor="name"
-                          className="leading-7 text-sm font-medium"
-                        >
-                          {" "}
-                          First Name
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="w-full  rounded border border-gray-[#C5B351]   focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-1 w-full sm:w-1/2">
-                      <div className="relative">
-                        <label
-                          htmlFor="email"
-                          className="leading-7 text-sm font-medium"
-                        >
-                          First Last
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="w-full  rounded border border-gray-[#C5B351]    focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-1 w-full sm:w-1/2">
-                      <div className="relative">
-                        <label
-                          htmlFor="email"
-                          className="leading-7 text-sm font-medium"
-                        >
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="w-full  rounded border border-gray-[#C5B351]    focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-1 w-full sm:w-1/2">
-                      <div className="relative">
-                        <label
-                          htmlFor="email"
-                          className="leading-7 text-sm font-medium"
-                        >
-                          Number
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="w-full  rounded border border-gray-[#C5B351]    focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                        />
-                      </div>
-                    </div>
-                    <div className="p-1 w-full">
-                      <div className="relative">
-                        <label
-                          htmlFor="message"
-                          className="leading-7 text-sm font-medium"
-                        >
-                          Message
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          className="w-full  rounded border border-gray-[#C5B351]    focus:ring-2 h-24 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div className="p-1 w-full">
-                      <button className="w-full text-white bg-[#C5B351] border-0 py-2 px-8 focus:outline-none hover:bg-black  ">
-                        Submit
-                      </button>
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 lg:p-12 bg-white text-black"
+            >
+              <div className="">
+                <div className="flex flex-wrap">
+                  <div className="p-1 w-full">
+                    <div className="relative">
+                      <label
+                        htmlFor="name"
+                        className="leading-7 text-sm font-medium"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full rounded border border-gray-[#C5B351] focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
                     </div>
                   </div>
+                  <div className="p-1 w-full sm:w-1/2">
+                    <div className="relative">
+                      <label
+                        htmlFor="email"
+                        className="leading-7 text-sm font-medium"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full rounded border border-gray-[#C5B351] focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-1 w-full sm:w-1/2">
+                    <div className="relative">
+                      <label
+                        htmlFor="phone"
+                        className="leading-7 text-sm font-medium"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full rounded border border-gray-[#C5B351] focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-1 w-full">
+                    <div className="relative">
+                      <label
+                        htmlFor="subject"
+                        className="leading-7 text-sm font-medium"
+                      >
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full rounded border border-gray-[#C5B351] focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-1 w-full">
+                    <div className="relative">
+                      <label
+                        htmlFor="message"
+                        className="leading-7 text-sm font-medium"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="description"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        className="w-full rounded border border-gray-[#C5B351] focus:ring-2 h-24 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div className="p-1 w-full">
+                    <button
+                      type="submit"
+                      className="w-full text-white bg-[#C5B351] border-0 py-2 px-8 focus:outline-none hover:bg-black"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

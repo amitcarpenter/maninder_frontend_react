@@ -1,9 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const LatestblogCard = ({ property }) => {
   return (
     <>
-      <div className="flex justify-between items-center">
+    
+      <Link  to={`/property/${property._id}`} className="flex justify-between items-center">
         <img
           className=" w-28 rounded-xl object-cover"
           src={
@@ -23,7 +25,7 @@ const LatestblogCard = ({ property }) => {
           )}
           <p className="text-NewYello">{property.price}</p>
         </div>
-      </div>
+      </Link>
     </>
   );
 };

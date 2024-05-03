@@ -16,9 +16,64 @@ import MessageBox from "../../components/MessageBox";
 
 import { Link } from "react-router-dom";
 import LatestblogCard from "../../components/LatestblogCard";
+import { toast } from "react-toastify";
 
 const Contactpage = () => {
   const { showMessageBox, handleClose, properties } = useMyContext();
+
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const apiUrl = "https://api.maninderrealestate.com/api/contact";
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // alert("Form submitted successfully!");
+        toast.success("Email Sent SuccessFully", { autoClose: 2000 });
+        // Optionally, you can reset the form fields here
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          description: "",
+        });
+      } else {
+        // const errorData = await response.json();
+        // throw new Error(errorData.message || "Something went wrong");
+        toast.error("Email Failed ", { autoClose: 2000 });
+      }
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  };
+
+
+
+
   return (
     <>
       <Header />
@@ -135,34 +190,54 @@ const Contactpage = () => {
                   {" "}
                   Contact
                 </h1>
-                <form className="py-3">
+                <form className="py-3" onSubmit={handleSubmit}>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <input
                       type="text"
                       className="focus:outline-none border-gray-300 border rounded-lg px-4 py-2  w-full"
                       placeholder="Name"
+                      name="name"
+                      onChange={handleChange}
+                      value={formData.name}
                     />
                     <input
                       type="text"
                       className="focus:outline-none border-gray-300 border rounded-lg px-4 py-2 w-full"
                       placeholder="Email"
+                      name="email"
+                      onChange={handleChange}
+                      value={formData.email}
                     />
                     <input
                       type="text"
                       className="focus:outline-none border-gray-300 border rounded-lg px-4 py-2 w-full"
-                      placeholder="Website"
+                      placeholder="Phone"
+                      name="phone"
+                      onChange={handleChange}
+                      value={formData.phone}
                     />
                   </div>
+                  <input
+                      type="text"
+                      className="focus:outline-none border-gray-300 border rounded-lg px-4 py-2 w-full mt-2"
+                      placeholder="Subject"
+                      name="subject"
+                      onChange={handleChange}
+                      value={formData.subject}
+                    />
 
                   <textarea
                     className=" my-3 border w-full rounded-lg px-4 focus:outline-none border-gray-300 py-2"
-                    placeholder="comment "
+                    placeholder="Message"
                     cols="20"
                     rows="6"
+                    name="description"
+                    onChange={handleChange}
+                    value={formData.description}
                   ></textarea>
 
-                  <button className="px-5  bg-NewYello text-white rounded py-1.5  ">
-                    Post Comment
+                  <button type="submit" className="px-5  bg-NewYello text-white rounded py-1.5  ">
+                    Submit
                   </button>
                 </form>
               </div>

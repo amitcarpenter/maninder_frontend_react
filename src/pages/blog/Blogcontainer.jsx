@@ -18,7 +18,7 @@ const Blogcontainer = () => {
   const fetchBlogs = async () => {
     try {
       const response = await fetch(
-        "https://backend.artechworld.tech/api/blogs"
+        "https://api.maninderrealestate.com/api/blogs"
       );
       const data = await response.json();
       if (data.status) {

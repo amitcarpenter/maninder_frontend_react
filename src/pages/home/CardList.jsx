@@ -8,13 +8,12 @@ const CardList = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch("https://backend.artechworld.tech/api/admin/property/list/all")
+    fetch("https://api.maninderrealestate.com/api/admin/property/list/all")
       .then((response) => response.json())
       .then((data) => {
         if (data.status && data.data) {
           const firstSixProperties = data.data.slice(0, 6);
           setProperties(firstSixProperties);
-          console.log(firstSixProperties);
         } else {
           console.error("Failed to fetch properties:", data.message);
         }

@@ -20,12 +20,12 @@ const MyProvider = (props) => {
   };
 
   useEffect(() => {
-    fetch("https://backend.artechworld.tech/api/admin/property/list/all")
+    fetch("https://api.maninderrealestate.com/api/admin/property/list/all")
       .then((response) => response.json())
       .then((data) => {
         if (data.status && data.data) {
           setProperties(data.data);
-          console.log(data.data);
+          
         } else {
           console.error("Failed to fetch properties:", data.message);
         }

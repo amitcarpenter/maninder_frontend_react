@@ -9,7 +9,7 @@ function DemoCarousel() {
   const [exclusiveListings, setExclusiveListings] = useState([]);
 
   useEffect(() => {
-    fetch("https://backend.artechworld.tech/api/exclusive-listing")
+    fetch("https://api.maninderrealestate.com/api/exclusive-listing")
       .then((response) => response.json())
       .then((data) => {
         if (data.status && data.data) {
@@ -53,44 +53,49 @@ function DemoCarousel() {
         >
           {exclusiveListings.map((listing, index) => (
             <div key={index} className="border bg-white md:mx-5">
-              <a href="https://restaurantbusinessbroker.ca/restaurant-listings" target="_blank">
-              <div
-                className=" relative w-full h-80  lg:h-96 bg-center  bg-no-repeat bg-cover"
-                style={{
-                  backgroundImage: `url(https://backend.artechworld.tech/uploads/blogs/tImages/${listing.exclusive_image})`,
-                }}
+              <a
+                href="https://restaurantbusinessbroker.ca/restaurant-listings"
+                target="_blank"
               >
-                <div className="absolute top-0 left-0 p-2 rounded-br-lg bg-NewYello">
-                  <p className="text-white text-sm capitalize">
-                    Exclusive Listings
+                <div
+                  className=" relative w-full h-80  lg:h-96 bg-center  bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage: `url("https://api.maninderrealestate.com/uploads/${listing.exclusive_image}")`,
+                  }}
+                >
+                  <div className="absolute top-0 left-0 p-2 rounded-br-lg bg-NewYello">
+                    <p className="text-white text-sm capitalize">
+                      Exclusive Listings
+                    </p>
+                  </div>
+                  <div className="absolute bottom-0 left-0 px-4 py-2 bg-white rounded-tr-lg">
+                    <p className="text-lg ">${listing.exclusive_price}</p>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://restaurantbusinessbroker.ca/restaurant-listings"
+                target="_blank"
+              >
+                <div className="p-4">
+                  <p>{listing.exclusive_address}</p>
+                  <p className="flex gap-3 py-2">
+                    <span className="flex justify-center items-center gap-3 ">
+                      {" "}
+                      <IoBedOutline className="w-5 h-5" />
+                      {listing.exclusive_bedroom}
+                    </span>
+                    <span className="flex justify-center items-center gap-3">
+                      {" "}
+                      <MdOutlineBathroom className="w-5 h-5" />
+                      {listing.exclusive_bathroom}
+                    </span>
+                    <span className="flex justify-center items-center gap-3">
+                      <BiRectangle className="w-5 h-5" />
+                      {listing.exclusive_area}
+                    </span>
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 px-4 py-2 bg-white rounded-tr-lg">
-                  <p className="text-lg ">${listing.exclusive_price}</p>
-                </div>
-              </div>
-              </a>
-              <a href="https://restaurantbusinessbroker.ca/restaurant-listings" target="_blank">
-             
-              <div className="p-4">
-                <p>{listing.exclusive_address}</p>
-                <p className="flex gap-3 py-2">
-                  <span className="flex justify-center items-center gap-3 ">
-                    {" "}
-                    <IoBedOutline className="w-5 h-5" />
-                    {listing.exclusive_bedroom}
-                  </span>
-                  <span className="flex justify-center items-center gap-3">
-                    {" "}
-                    <MdOutlineBathroom className="w-5 h-5" />
-                    {listing.exclusive_bathroom}
-                  </span>
-                  <span className="flex justify-center items-center gap-3">
-                    <BiRectangle className="w-5 h-5" />
-                    {listing.exclusive_area}
-                  </span>
-                </p>
-              </div>
               </a>
             </div>
           ))}

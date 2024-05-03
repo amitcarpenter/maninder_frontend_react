@@ -9,7 +9,6 @@ import { useMyContext } from "../../store/ContextApi";
 import MessageBox from "../../components/MessageBox";
 import { IoIosArrowDown } from "react-icons/io";
 
-
 const FeaturedPage = () => {
   const [Searchtogglemenu, setSearchtogglemenu] = useState(false);
   const [properties, setProperties] = useState([]);
@@ -24,14 +23,14 @@ const FeaturedPage = () => {
   const handleSubmit = async () => {
     try {
       const queryParams = new URLSearchParams(filters).toString();
-      console.log(queryParams);
+     
       const response = await fetch(
-        `https://backend.artechworld.tech/api/property/filter?${queryParams}`
+        `https://api.maninderrealestate.com/api/property/filter?${queryParams}`
       );
       if (response.ok) {
         const data = await response.json();
         setProperties(data.data);
-        console.log(data);
+  
       } else {
         console.error("Failed to fetch data");
       }
@@ -50,7 +49,7 @@ const FeaturedPage = () => {
   }, [filters]); // Run this effect whenever the filters state changes
 
   useEffect(() => {
-    fetch("https://backend.artechworld.tech/api/admin/property/list/all")
+    fetch("https://api.maninderrealestate.com/api/admin/property/list/all")
       .then((response) => response.json())
       .then((data) => {
         if (data.status && data.data) {
@@ -70,7 +69,7 @@ const FeaturedPage = () => {
 
     try {
       const response = await fetch(
-        `https://backend.artechworld.tech/api/property/search?location=${searchQuery}`
+        `https://api.maninderrealestate.com/api/property/search?location=${searchQuery}`
       );
       const data = await response.json();
 
@@ -179,7 +178,9 @@ const FeaturedPage = () => {
                   }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
                 >
-                  <option selected value="">Choose a price range</option>
+                  <option selected value="">
+                    Choose a price range
+                  </option>
                   <option value="0-100000">$0 - $100,000</option>
                   <option value="100000-200000">$100,000 - $200,000</option>
                   <option value="200000-300000">$200,000 - $300,000</option>
@@ -199,7 +200,7 @@ const FeaturedPage = () => {
                   onChange={(event) => handleChange("beds", event.target.value)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option data-v-b892bd7a=""  value="">
+                  <option data-v-b892bd7a="" value="">
                     Beds
                   </option>
                   <option data-v-b892bd7a="" value="1">
@@ -231,7 +232,9 @@ const FeaturedPage = () => {
                   }
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-3 "
                 >
-                  <option selected  value="">Baths</option>
+                  <option selected value="">
+                    Baths
+                  </option>
                   <option data-v-b892bd7a="" value="1">
                     1+
                   </option>

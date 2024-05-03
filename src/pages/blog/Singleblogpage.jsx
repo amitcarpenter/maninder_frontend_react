@@ -18,9 +18,7 @@ import { Parser } from "html-to-react";
 import LatestblogCard from "../../components/LatestblogCard";
 
 const Singleblogpage = () => {
-
-
-  const { showMessageBox, handleClose,properties } = useMyContext();
+  const { showMessageBox, handleClose, properties } = useMyContext();
   const data = [1, 2, 3, 4, 5];
   const [blogs, setBlogs] = useState([]);
   const [Singleblogs, setSingleblogs] = useState({});
@@ -32,7 +30,7 @@ const Singleblogpage = () => {
   const fetchBlogs = async () => {
     try {
       const response = await fetch(
-        "https://backend.artechworld.tech/api/blogs"
+        "https://api.maninderrealestate.com/api/blogs"
       );
       const data = await response.json();
       if (data.status) {
@@ -63,7 +61,7 @@ const Singleblogpage = () => {
   const fetchSingleBlogs = async () => {
     try {
       const response = await fetch(
-        `https://backend.artechworld.tech/api/blog/${id}`
+        `https://api.maninderrealestate.com/api/blog/${id}`
       );
       const data = await response.json();
       if (data.status) {
@@ -110,7 +108,7 @@ const Singleblogpage = () => {
                 </div>
                 <img
                   class="w-full object-cover"
-                  src={`https://backend.artechworld.tech/uploads/blogs/tImages/${Singleblogs?.mainImage}`}
+                  src={`https://api.maninderrealestate.com/uploads/blogs/tImages/${Singleblogs?.mainImage}`}
                   alt=""
                 />
 
@@ -257,7 +255,7 @@ const Singleblogpage = () => {
 
                   <div className="py-3">
                     <div className="flex flex-col space-y-3">
-                    {properties.slice(6, 10).map((property, index) => {
+                      {properties.slice(6, 10).map((property, index) => {
                         return (
                           <>
                             <LatestblogCard property={property} key={index} />

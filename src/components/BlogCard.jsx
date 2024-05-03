@@ -23,7 +23,7 @@ const BlogCard = ({ blog }) => {
       <div className="lg:max-w-sm relative p-1 bg-white shadow-lg  overflow-hidden rounded-lg border-[1px] border-[#f1f8ff] text-[#464646] ">
         <img
           className="h-[230px] sm:h-[290px] w-full rounded-[10px] transition-transform duration-300 transform hover:scale-110 object-cover"
-          src={`https://backend.artechworld.tech/uploads/blogs/tImages/${blog?.mainImage}`}
+          src={`https://api.maninderrealestate.com/uploads/blogs/tImages/${blog?.mainImage}`}
           alt=""
         />
         <div className="p-4">

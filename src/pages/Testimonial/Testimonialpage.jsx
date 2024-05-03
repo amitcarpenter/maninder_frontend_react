@@ -5,23 +5,18 @@ import MessageBox from "../../components/MessageBox";
 import { useMyContext } from "../../store/ContextApi";
 
 const Testimonialpage = () => {
-
-  const {showMessageBox,handleClose } = useMyContext()
+  const { showMessageBox, handleClose } = useMyContext();
 
   const [testimonials, setTestimonials] = useState([]);
 
-
-
   useEffect(() => {
     fetchTestimonials();
-  }, [])
-
-
+  }, []);
 
   const fetchTestimonials = async () => {
     try {
       const response = await fetch(
-        "https://backend.artechworld.tech/api/testimonials/all"
+        "https://api.maninderrealestate.com/api/testimonials/all"
       );
       const data = await response.json();
       if (data.success) {
@@ -41,8 +36,9 @@ const Testimonialpage = () => {
       stars.push(
         <span
           key={i}
-          className={`mr-1 ${i <= rating ? "text-yellow-400" : "text-gray-400"
-            }`}
+          className={`mr-1 ${
+            i <= rating ? "text-yellow-400" : "text-gray-400"
+          }`}
         >
           &#9733;
         </span>
