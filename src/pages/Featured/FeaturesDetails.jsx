@@ -558,7 +558,7 @@ const FeaturesDetails = () => {
                       <div>
                         <img
                           className="w-20"
-                          src="https://crm.artechworld.tech/images/faces/facemaninder.png"
+                          src="https://crm.maninderrealestate.com/images/faces/facemaninder.png"
                           alt=""
                         />
                       </div>

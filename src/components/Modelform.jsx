@@ -61,7 +61,7 @@ const Modelform = () => {
             <div>
               <img
                 className="w-20 mt-[-26px]"
-                src="https://crm.artechworld.tech/images/faces/facemaninder.png"
+                src="https://crm.maninderrealestate.com/images/faces/facemaninder.png"
                 alt=""
               />
             </div>

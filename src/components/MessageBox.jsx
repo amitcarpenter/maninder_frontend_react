@@ -48,7 +48,7 @@ const MessageBox = ({ onClose }) => {
           <img
             onClick={toggleModal}
             className="w-16 h-16 object-fill rounded-full "
-            src="https://crm.artechworld.tech/images/faces/facemaninder.png"
+            src="https://crm.maninderrealestate.com/images/faces/facemaninder.png"
             alt=""
           />
         </div>

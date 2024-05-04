@@ -226,6 +226,7 @@ const FeaturedPage = () => {
               <div class="max-w-sm ">
                 <select
                   id="baths"
+                  
                   value={filters.baths}
                   onChange={(event) =>
                     handleChange("baths", event.target.value)
